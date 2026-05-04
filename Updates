@@ -880,6 +880,7 @@
 
         <h3><i class="fas fa-video"></i> Key Video Resources</h3>
 
+        <!-- Video 1 Prediction Trigger -->
         <div class="prediction-card">
             <div class="prediction-question" onclick="toggleAnswer('videoPred1')">
                 🎬 <strong>Before watching Video 1:</strong> What growth stage are these weeds in? What control method would you choose?
@@ -890,13 +891,21 @@
             </div>
         </div>
 
+        <!-- Video 1: Gorse / Serrated Tussock identification and control (functional embed) -->
         <div class="media-container">
             <div class="video-wrapper" id="video1">
-                <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Weed ID" frameborder="0" allowfullscreen></iframe>
+                <iframe 
+                    src="https://www.youtube.com/embed/6Y5FAC8rO9k" 
+                    title="Weed identification and control methods" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
-            <p><strong>Video 1:</strong> Weed identification and early intervention. Notice the growth habits and how to spot seedlings.</p>
+            <p><strong>Video 1:</strong> Weed identification and early intervention. Notice the growth habits, leaf structure, and how to spot seedlings before they set seed.</p>
         </div>
 
+        <!-- Video 2 Prediction Trigger -->
         <div class="prediction-card">
             <div class="prediction-question" onclick="toggleAnswer('videoPred2')">
                 🎬 <strong>Before watching Video 2:</strong> What common application mistake is about to be shown? Predict.
@@ -906,11 +915,18 @@
             </div>
         </div>
 
+        <!-- Video 2: Herbicide application best practices (functional embed) -->
         <div class="media-container">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Control methods" frameborder="0" allowfullscreen></iframe>
+                <iframe 
+                    src="https://www.youtube.com/embed/3pDqRkvJqNA" 
+                    title="Herbicide application techniques and common mistakes" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
-            <p><strong>Video 2:</strong> Control methods and common application mistakes. Pay attention to timing and technique.</p>
+            <p><strong>Video 2:</strong> Correct application techniques, calibration, and common mistakes that reduce efficacy.</p>
         </div>
 
         <h3 id="photos-section"><i class="fas fa-camera"></i> Field Photo Gallery</h3>
