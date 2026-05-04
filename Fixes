@@ -1,48 +1,45 @@
-This is a great question, and it gets to the heart of how this specific training tool is designed.
+    <!-- ========== MEDIA TAB ========== -->
+    <div id="media" class="tab-pane">
+        <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
+        <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
 
-The short answer is: the videos don't currently work because the page is built as a self-contained offline training tool using placeholder links.
+        <h3><i class="fas fa-video"></i> Key Video Resources</h3>
 
-Let me explain exactly why and how you can fix it easily.
+        <div class="prediction-card">
+            <button class="prediction-question" onclick="toggleAnswer('videoPred1')" aria-expanded="false" aria-controls="videoPred1">
+                🎬 <strong>Before watching Video 1:</strong> What growth stage are these weeds in? What control method would you choose?
+            </button>
+            <div id="videoPred1" class="prediction-answer">
+                After watching, compare: look for leaf shape, stem development, and whether seed heads are forming.
+                Active growth phase = systemic herbicide window.
+            </div>
+        </div>
 
-The Core Reason: Placeholder YouTube Links
+        <div class="media-container">
+            <div class="video-wrapper" id="video1">
+                <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Weed identification" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Video 1:</strong> Weed identification and early intervention. Notice the growth habits, leaf structure, and how to spot seedlings before they set seed.</p>
+        </div>
 
-Look inside the Media tab's code. You'll find this for the first video:
+        <div class="prediction-card">
+            <button class="prediction-question" onclick="toggleAnswer('videoPred2')" aria-expanded="false" aria-controls="videoPred2">
+                🎬 <strong>Before watching Video 2:</strong> What common application mistake is about to be shown? Predict.
+            </button>
+            <div id="videoPred2" class="prediction-answer">
+                Focus on nozzle height, walking speed, and weather indicators. Compare with your prediction after watching.
+            </div>
+        </div>
 
-```html
-<iframe src="https://www.youtube.com/watch?v=dNbjTL21CLY" ...></iframe>
-```
+        <div class="media-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Control methods" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Video 2:</strong> Control methods and common application mistakes. Pay attention to calibration and weather awareness.</p>
+        </div>
 
-This is the key issue. The correct URL to embed a YouTube video looks like this: https://www.youtube.com/embed/dNbjTL21CLY.
-
-The current link is for watching the video on YouTube's website, not for embedding it within your page. The browser doesn't know how to display that inside an iframe.
-
-The 3-Step Fix (Works Immediately)
-
-You don't need to be a coding expert to fix this. Just open the HTML file in a text editor (like Notepad or TextEdit) and make these changes:
-
-Step 1: Find the Media Tab Section
-Search for the line that says <!-- ========== MEDIA TAB ========== -->.
-
-Step 2: Replace the YouTube URLs
-You will see two lines with iframe src="...". Replace them with the correct URLs.
-
-· Change Video 1 from:
-  src="https://www.youtube.com/watch?v=dNbjTL21CLY"
-  To:
-  src="https://www.youtube.com/embed/dNbjTL21CLY"
-· Change Video 2 from:
-  src="https://www.youtube.com/watch?v=b_GaUwNPKv8"
-  To:
-  src="https://www.youtube.com/embed/b_GaUwNPKv8"
-
-Step 3: Save and Refresh
-Save the file and refresh the page in your browser. The videos will now play inside the media tab.
-
-A Note on Photos & Offline Use
-
-The weed photos in the "Weed Library" tab are also placeholders. They are looking for local image files in a folder named weeds/ (like weeds/gorse.jpg).
-
-· To add your own: Create a folder named weeds in the same location as this HTML file, and add your photos with the exact names listed in the gallery (e.g., gorse.jpg, ragwort.jpg).
-· Offline Use: The rest of the training content (questions, scenarios, quizzes) and your saved progress work completely offline, making it perfect for field use.
-
-Once you make that simple URL change, your videos will work perfectly. The creator used placeholders to keep the file self-contained, but the structure is all there for you to add your own real media.
+        <h3><i class="fas fa-camera"></i> Field Photo Gallery</h3>
+        <p><strong>Add your photos to the <code>weeds/</code> folder with these filenames:</strong><br>
+        gorse.jpg, montpelier-broom.jpg, ragwort.jpg, pampas-grass.jpg, boneseed.jpg, blackberry.jpg,<br>
+        capeweed.jpg, banana-passionfruit.jpg, spear-thistle.jpg, cotoneaster.jpg, mirror-bush.jpg, sweet-pittosporum.jpg</p>
+    </div>
