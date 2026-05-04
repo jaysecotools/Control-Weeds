@@ -1,0 +1,8 @@
+{
+    "name": "AHCPMG301 Weed Control Training",
+    "short_name": "Weed Training",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#1a4a35",
+    "background_color": "#deecda"
+}
