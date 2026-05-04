@@ -1,0 +1,372 @@
+I'm pretty happy with how this learning resource is panning out, but i feel it needs to be more engaging for students by including things like a photos, and a video or two. I can provide photos from what I have, which I'll include in the app's root folder to link too. I've also found a couple of videos to include somewhere - https://www.youtube.com/watch?v=dNbjTL21CLY and https://www.youtube.com/watch?v=b_GaUwNPKv8
+
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>AHCPMG301 · Control Weeds · Prediction-First Learning · Field Judgement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #1a4a35; --primary: #2e6b50; --accent: #e0a23b;
+            --light: #f1f8ef; --warning: #c7452b; --success: #2a7f64;
+            --info: #2c7a5e; --trap: #b5651e;
+        }
+        body { font-family: 'Segoe UI', system-ui; background: #deecda; padding: 1rem; line-height: 1.55; }
+        .app { max-width: 1300px; margin: 0 auto; background: white; border-radius: 2rem; overflow: hidden; box-shadow: 0 25px 40px rgba(0,0,0,0.1); }
+        .hero { background: linear-gradient(135deg, #1a4a35, #276a4e); color: white; padding: 2rem; border-bottom: 8px solid var(--accent); }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+        .hero h1 i { color: var(--accent); margin-right: 12px; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .badge-row span { background: rgba(255,248,210,0.2); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; border-left: 3px solid var(--accent); }
+        .tabs { background: #0f3628; display: flex; flex-wrap: wrap; gap: 0.2rem; padding: 0.3rem 0.8rem 0; position: sticky; top: 0; z-index: 100; overflow-x: auto; }
+        .tab-btn { background: transparent; border: none; color: #eaf5e4; padding: 0.7rem 0.9rem; font-weight: 600; cursor: pointer; border-bottom: 3px solid transparent; transition: 0.2s; white-space: nowrap; font-size: 0.85rem; }
+        .tab-btn i { margin-right: 6px; }
+        .tab-btn.active { border-bottom-color: var(--accent); background: #246b4f; color: white; }
+        .tab-pane { display: none; padding: 2rem; }
+        .tab-pane.active { display: block; animation: fade 0.2s; }
+        @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+        h2 { font-size: 1.8rem; color: var(--dark); border-left: 10px solid var(--accent); padding-left: 1rem; margin-bottom: 1.2rem; }
+        h3 { font-size: 1.4rem; color: #236349; margin: 1.8rem 0 1rem; border-bottom: 3px dashed #cbe0cd; padding-bottom: 0.3rem; }
+        h4 { font-size: 1.2rem; margin: 1rem 0 0.5rem; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .info-card { background: var(--light); border-radius: 1.2rem; padding: 1.2rem; border: 1px solid #cbdac2; }
+        .info-card i { font-size: 1.8rem; color: var(--primary); margin-bottom: 0.6rem; }
+        .prediction-card { background: #fff9ef; border-left: 8px solid var(--accent); border-radius: 1rem; padding: 1.2rem; margin: 1rem 0; }
+        .prediction-question { background: #eaf4e5; border-radius: 0.8rem; padding: 0.8rem; margin: 0.8rem 0; font-weight: bold; cursor: pointer; }
+        .prediction-answer { display: none; background: white; border-radius: 0.8rem; padding: 0.8rem; margin-top: 0.5rem; border-left: 4px solid var(--success); }
+        .trap-card { background: #fff0e5; border-left: 8px solid var(--trap); border-radius: 1rem; padding: 1rem; margin: 0.8rem 0; }
+        .field-signal { background: #e8f0fe; border-radius: 0.8rem; padding: 0.6rem 1rem; margin: 0.5rem 0; font-size: 0.9rem; }
+        .seedbank-timeline { background: #f0f7ea; border-radius: 1rem; padding: 1.2rem; margin: 1rem 0; text-align: center; }
+        .timeline-bar { display: flex; height: 40px; margin: 1rem 0; border-radius: 20px; overflow: hidden; }
+        .timeline-year { flex: 1; display: flex; flex-direction: column; align-items: center; font-size: 0.7rem; }
+        .year-0 { background: #2e6b50; color: white; }
+        .year-1-3 { background: #e0a23b; }
+        .year-3-7 { background: #cbdac2; }
+        .year-10 { background: #a0b89a; }
+        .dont-list { list-style: none; padding: 0; }
+        .dont-list li { margin: 0.8rem 0; padding-left: 1.5rem; position: relative; }
+        .dont-list li:before { content: "✗"; color: var(--warning); font-weight: bold; position: absolute; left: 0; }
+        .micro-scenario { background: #f9faf5; border-radius: 0.8rem; padding: 0.8rem; margin: 0.6rem 0; border: 1px solid #cbdac2; }
+        .btn-reveal { background: var(--accent); color: #1e3a2c; border: none; padding: 0.3rem 1rem; border-radius: 60px; cursor: pointer; font-size: 0.75rem; margin-top: 0.5rem; }
+        .footer { background: #0d3526; color: #f2f2e6; padding: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.75rem; }
+        @media (max-width: 700px) { .tab-pane { padding: 1rem; } .tab-btn span { display: none; } }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="hero">
+        <h1><i class="fas fa-brain"></i> AHCPMG301 · Control Weeds · Prediction-First Learning</h1>
+        <div class="badge-row">
+            <span><i class="fas fa-chart-line"></i> Cause → Effect → Response</span>
+            <span><i class="fas fa-question-circle"></i> Predict before you read</span>
+            <span><i class="fas fa-eye"></i> Field signals</span>
+            <span><i class="fas fa-trap"></i> Confidence traps</span>
+        </div>
+        <p style="margin-top: 0.8rem;">This is not a reference. This is <strong>judgement training</strong>. For each concept, <strong>predict what happens</strong> before revealing the answer. Learning happens in the gap between expectation and reality.</p>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab(event, 'ecology')"><i class="fas fa-seedling"></i><span> Ecology</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'failures')"><i class="fas fa-exclamation-triangle"></i><span> Failures</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'seedbank')"><i class="fas fa-database"></i><span> Seedbank</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'signals')"><i class="fas fa-eye"></i><span> Field signals</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'methods')"><i class="fas fa-tractor"></i><span> Method hierarchy</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'resistance')"><i class="fas fa-shield-virus"></i><span> Resistance</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'dont')"><i class="fas fa-ban"></i><span> What NOT to do</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'traps')"><i class="fas fa-trap"></i><span> Confidence traps</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'indigenous')"><i class="fas fa-hands"></i><span> Indigenous</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'micro')"><i class="fas fa-comment-dots"></i><span> Micro-scenarios</span></button>
+    </div>
+
+    <!-- ECOLOGY with Cause→Effect→Response -->
+    <div id="ecology" class="tab-pane active">
+        <h2><i class="fas fa-seedling"></i> Weed ecology · Cause → Effect → Response</h2>
+        
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('eco1')">🌿 <strong>Cause:</strong> Roadside disturbance (grading, slashing, vehicle traffic). <strong>Predict:</strong> What happens to weed populations over 3 years?</div>
+            <div id="eco1" class="prediction-answer"><strong>Effect:</strong> Weed seedbank activates. Gorse, broom, thistles colonise bare ground. Native regeneration suppressed.<br>
+            <strong>Response:</strong> Prioritise weed control BEFORE disturbance if possible. After disturbance, rapid revegetation with competitive natives is essential.</div>
+        </div>
+
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('eco2')">🔥 <strong>Cause:</strong> High-intensity fire through gorse-infested bushland. <strong>Predict:</strong> What does the site look like 12 months post-fire?</div>
+            <div id="eco2" class="prediction-answer"><strong>Effect:</strong> Gorse resprouts vigorously from root crowns. Seedbank stimulated. Often denser than pre-fire.<br>
+            <strong>Response:</strong> Fire is NOT control. Must follow with herbicide within 6-12 months. Never burn without follow-up plan.</div>
+        </div>
+
+        <div class="field-signal"><i class="fas fa-eye"></i> <strong>Field signal:</strong> Even-aged weed seedlings across a large area = recent disturbance (fire, grading, flood). This is your window for prevention.</div>
+    </div>
+
+    <!-- FAILURES with prediction before reveal -->
+    <div id="failures" class="tab-pane">
+        <h2><i class="fas fa-exclamation-triangle"></i> Failure cases · Predict before you read</h2>
+        
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('fail1')">❄️ <strong>Situation:</strong> Contractor applies glyphosate to gorse in July (dormant, frosty mornings). <strong>Predict:</strong> What happens by October?</div>
+            <div id="fail1" class="prediction-answer"><strong>Outcome:</strong> <20% kill. Gorse unaffected – plant wasn't actively growing, so systemic herbicide didn't translocate. Wasted chemical and labour.<br>
+            <strong>Correct:</strong> Delay until active growth (autumn or spring).</div>
+        </div>
+
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('fail2')">🌾 <strong>Situation:</strong> Landowner slashes 5ha of serrated tussock in December (seed heads present). <strong>Predict:</strong> What happens over next 2 years?</div>
+            <div id="fail2" class="prediction-answer"><strong>Outcome:</strong> Infestation expands 3-5x. Slashing spread thousands of viable seeds per plant onto bare ground.<br>
+            <strong>Correct:</strong> Never slash after seed set. Spot spray selective herbicides BEFORE seed heads emerge.</div>
+        </div>
+
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('fail3')">🌧️ <strong>Situation:</strong> Heavy rain forecast in 2 hours. Contractor sprays anyway. <strong>Predict:</strong> Efficacy?</div>
+            <div id="fail3" class="prediction-answer"><strong>Outcome:</strong> Most herbicides washed off. <10% effective. Chemical runoff into waterways possible.<br>
+            <strong>Correct:</strong> Check rainfast window on label (2-24 hours). Never spray if rain due within that window.</div>
+        </div>
+    </div>
+
+    <!-- SEEDBANK TIMELINE VISUAL (critical) -->
+    <div id="seedbank" class="tab-pane">
+        <h2><i class="fas fa-database"></i> Seedbank timeline · Why most programs fail</h2>
+        <p><strong>The single biggest misunderstanding:</strong> Visible weed removal ≠ success. The seedbank is the real enemy.</p>
+        
+        <div class="seedbank-timeline">
+            <h4>Gorse seedbank decline after adult removal</h4>
+            <div class="timeline-bar">
+                <div class="timeline-year year-0" style="flex:0.5;">Year 0<br>Adults removed</div>
+                <div class="timeline-year year-1-3" style="flex:1.5;">Year 1-3<br>Massive germination flush</div>
+                <div class="timeline-year year-3-7" style="flex:2;">Year 3-7<br>Declining recruitment</div>
+                <div class="timeline-year year-10" style="flex:1;">Year 10+<br>Sporadic emergence</div>
+            </div>
+            <p><strong>Critical insight:</strong> Gorse seed remains viable for <strong>30+ years</strong>. Most control programs stop at Year 1 or 2 – exactly when germination peaks. That's why reinfestation is guaranteed without 5-7 year follow-up.</p>
+        </div>
+
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('seed1')">📊 <strong>Predict:</strong> After 90% visible kill of gorse, how many viable seeds remain per square metre?</div>
+            <div id="seed1" class="prediction-answer"><strong>Answer:</strong> Thousands. A single mature gorse bush can produce 5,000-10,000 seeds annually. After 90% kill, seedbank remains largely intact.<br>
+            <strong>Implication:</strong> Visible success is deceptive. Follow-up for years is mandatory.</div>
+        </div>
+    </div>
+
+    <!-- FIELD SIGNALS (what you actually see) -->
+    <div id="signals" class="tab-pane">
+        <h2><i class="fas fa-eye"></i> Field signals · What you actually see</h2>
+        <p>Theory is useless if you can't read the landscape. These are diagnostic signs.</p>
+        
+        <div class="info-card">
+            <i class="fas fa-tint"></i>
+            <h4>Waxy leaf beading</h4>
+            <p>Water droplets forming spheres, rolling off leaf surface. <strong>Diagnosis:</strong> Poor spray uptake. <strong>Response:</strong> Add surfactant/wetting agent.</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-leaf"></i>
+            <h4>Red/purple leaf stress</h4>
+            <p>Discoloration, often on margins. <strong>Diagnosis:</strong> Drought or cold stress. <strong>Response:</strong> Plant not actively transporting. Delay systemic herbicide.</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-layer-group"></i>
+            <h4>Even-aged seedling cohort</h4>
+            <p>Large area of same-size seedlings. <strong>Diagnosis:</strong> Recent disturbance (fire, grading, flood). <strong>Response:</strong> Early intervention window – act now before seed set.</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-border-all"></i>
+            <h4>Patchy herbicide kill</h4>
+            <p>Uneven death, clusters of survivors. <strong>Diagnosis:</strong> Application issue (nozzle block, walking speed variation) OR early resistance. <strong>Response:</strong> Investigate equipment, consider rotating MOA.</p>
+        </div>
+    </div>
+
+    <!-- METHOD SELECTION HIERARCHY -->
+    <div id="methods" class="tab-pane">
+        <h2><i class="fas fa-sitemap"></i> Method selection · A reusable thinking framework</h2>
+        <p>Stop memorising methods. Start with these <strong>five diagnostic questions</strong>:</p>
+        
+        <div class="info-card">
+            <h4>1. Is seed present or about to be produced?</h4>
+            <p>YES → STOP SPREAD FIRST. Containment, avoid slashing, bag seed heads. <strong>Prevention is cheaper than control.</strong></p>
+        </div>
+        <div class="info-card">
+            <h4>2. Is the plant actively growing?</h4>
+            <p>YES → systemic herbicides effective. NO (drought, frost, dormancy) → delay or switch to mechanical (cut stump, basal bark).</p>
+        </div>
+        <div class="info-card">
+            <h4>3. Is the site environmentally sensitive?</h4>
+            <p>Near water, threatened species, cultural site? → Non-chemical methods first. If chemical required, aquatic-registered only.</p>
+        </div>
+        <div class="info-card">
+            <h4>4. Is the infestation large or small?</h4>
+            <p>Small (<0.1ha) → hand pull, spot spray. Large → prioritise edges, containment zones. Don't treat everything at once.</p>
+        </div>
+        <div class="info-card">
+            <h4>5. What is the follow-up plan?</h4>
+            <p>NO FOLLOW-UP PLAN = ACCEPT FAILURE. Schedule Year 2, 3, 5, 7 before you start.</p>
+        </div>
+        
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('method1')">🔍 <strong>Apply the framework:</strong> Dense gorse, 2ha, site slopes to creek, mid-spring (active growth). What method?</div>
+            <div id="method1" class="prediction-answer"><strong>Diagnosis:</strong> Actively growing → systemic works. Near water → no chemical within 20m buffer. <strong>Solution:</strong> Cut stump on creek buffer zone (no chem). Basal bark on upper slope. Follow-up at 12 months.</div>
+        </div>
+    </div>
+
+    <!-- RESISTANCE AWARENESS -->
+    <div id="resistance" class="tab-pane">
+        <h2><i class="fas fa-shield-virus"></i> Herbicide resistance · Real and growing</h2>
+        <p>Resistance is not a future problem. It is happening now. Glyphosate-resistant annual ryegrass exists in Tasmania. The same WILL happen with woody weeds if we don't change practices.</p>
+        
+        <div class="prediction-card">
+            <div class="prediction-question" onclick="toggleAnswer('resist1')">💊 <strong>Predict:</strong> What happens when a contractor uses half-rate glyphosate over large areas for 3 consecutive years?</div>
+            <div id="resist1" class="prediction-answer"><strong>Outcome:</strong> Sub-lethal dosing selects resistant individuals. Surviving plants breed. Within 5 years, the population is no longer controlled by standard rates.<br>
+            <strong>Correct:</strong> Always use label rates. Rotate mode of action (MOA) groups. Never spray the same herbicide on the same population year after year.</div>
+        </div>
+
+        <div class="field-signal">
+            <i class="fas fa-flask"></i> <strong>Early resistance signals:</strong> Patches within infestation that survive treatment while surrounding plants die. Same equipment, same mix, same day. That is not "missed spots" – that is resistance developing.
+        </div>
+    </div>
+
+    <!-- WHAT NOT TO DO -->
+    <div id="dont" class="tab-pane">
+        <h2><i class="fas fa-ban"></i> What NOT to do · The failure checklist</h2>
+        <p>Memorise this. Print it. Put it in your vehicle.</p>
+        
+        <ul class="dont-list">
+            <li>✗ Slash serrated tussock after seed set</li>
+            <li>✗ Spray systemic herbicides during drought or frost</li>
+            <li>✗ Assume one treatment = success</li>
+            <li>✗ Ignore clean-down between sites</li>
+            <li>✗ Treat without positive weed identification</li>
+            <li>✗ Cut and leave willow branches in waterways</li>
+            <li>✗ Use higher herbicide rate than label "for safety" (increases resistance selection)</li>
+            <li>✗ Work alone in remote areas without PLB/EPIRB</li>
+            <li>✗ Spray when wind >15km/h or during temperature inversion</li>
+            <li>✗ Burn gorse without 12-month follow-up herbicide</li>
+        </ul>
+        
+        <div class="trap-card">
+            <i class="fas fa-skull"></i> <strong>The worst failure:</strong> Walking away after one treatment, believing the job is done. Seedbank + regrowth = reinfestation within 2-3 years.
+        </div>
+    </div>
+
+    <!-- CONFIDENCE TRAPS (where experts fail) -->
+    <div id="traps" class="tab-pane">
+        <h2><i class="fas fa-trap"></i> Confidence traps · Where experienced operators fail</h2>
+        <p>These are not beginner mistakes. These are the errors that catch skilled people because they look like success.</p>
+        
+        <div class="trap-card">
+            <h4><i class="fas fa-seedling"></i> Trap 1: "Looks dead" ≠ dead</h4>
+            <p>Gorse can look brown and dead above ground while root crowns are viable. Wait 6 months before declaring success. Resprouts are common.</p>
+        </div>
+        
+        <div class="trap-card">
+            <h4><i class="fas fa-vial"></i> Trap 2: "More chemical = better"</h4>
+            <p>Exceeding label rates does not improve kill. It wastes chemical, increases environmental risk, and accelerates resistance selection. Label rate is scientifically determined optimum.</p>
+        </div>
+        
+        <div class="trap-card">
+            <h4><i class="fas fa-check-circle"></i> Trap 3: "Clean site = success"</h4>
+            <p>No visible weeds does not mean no seedbank. The real infestation is underground. Control programs fail when they declare victory at Year 1 instead of Year 7.</p>
+        </div>
+        
+        <div class="trap-card">
+            <h4><i class="fas fa-chart-line"></i> Trap 4: "Past success predicts future"</h4>
+            <p>What worked last season may fail this season. Weather, plant phenology, and resistance change. Always assess current conditions before applying.</p>
+        </div>
+    </div>
+
+    <!-- INDIGENOUS PERSPECTIVES (strengthened) -->
+    <div id="indigenous" class="tab-pane">
+        <h2><i class="fas fa-hands-helping"></i> Indigenous land management · Observation-based learning</h2>
+        
+        <div class="info-card">
+            <i class="fas fa-fire"></i>
+            <h4>Cultural burning vs uniform disturbance</h4>
+            <p>Western fire management often treats entire blocks uniformly. Indigenous mosaic burning creates patchworks of different ages and burn intensities. This naturally suppresses woody weeds while maintaining habitat diversity.<br>
+            <strong>Lesson:</strong> Consider patch-burn strategies, not whole-site treatments.</p>
+        </div>
+        
+        <div class="info-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h4>Reading the land, not the calendar</h4>
+            <p>Instead of fixed dates ("spray in October"), Indigenous approaches read seasonal indicators: specific flowering events, insect activity, soil moisture, wind patterns. This is more reliable in variable Tasmanian climates.<br>
+            <strong>Lesson:</strong> Use phenological signals (e.g., wattle flowering) as your treatment trigger.</p>
+        </div>
+        
+        <div class="info-card">
+            <i class="fas fa-tree"></i>
+            <h4>Long-term thinking (decades, not seasons)</h4>
+            <p>Weed control is often funded in 1-3 year cycles. Indigenous land management works in generational timeframes. The most successful weed programs are those that secure multi-year commitment.<br>
+            <strong>Lesson:</strong> Advocate for 7-10 year follow-up plans from the beginning.</p>
+        </div>
+    </div>
+
+    <!-- MICRO-SCENARIOS (everywhere) -->
+    <div id="micro" class="tab-pane">
+        <h2><i class="fas fa-comment-dots"></i> Micro-scenarios · 1-2 line decisions</h2>
+        
+        <div class="micro-scenario">
+            <p><strong>🌿 You see gorse resprouting 6 months after treatment. What likely went wrong?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro1')">Reveal</button>
+            <div id="micro1" style="display:none; margin-top:0.5rem;">Low herbicide uptake (drought-stressed plant) OR missed stems during application. Resprouting is normal – need follow-up treatment.</div>
+        </div>
+        
+        <div class="micro-scenario">
+            <p><strong>💧 Customer wants you to spray willows along a trout stream. Chemical buffer is 20m. What do you do?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro2')">Reveal</button>
+            <div id="micro2" style="display:none; margin-top:0.5rem;">Cut stump mechanical removal within 20m. No chemical near water. Explain to customer why – legality and ecology.</div>
+        </div>
+        
+        <div class="micro-scenario">
+            <p><strong>📉 Your spray results are patchy. Some areas 100% kill, others 30%. Same mix, same day. What's likely happening?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro3')">Reveal</button>
+            <div id="micro3" style="display:none; margin-top:0.5rem;">Equipment issue (nozzle block, pressure variation) OR early resistance. Check calibration first. If consistent pattern, consider MOA rotation.</div>
+        </div>
+        
+        <div class="micro-scenario">
+            <p><strong>🔥 Fire has just swept through a gorse-infested valley. Landholder says "good, that's sorted." What do you say?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro4')">Reveal</button>
+            <div id="micro4" style="display:none; margin-top:0.5rem;">Fire stimulates gorse germination and resprouting. Will be worse within 12 months without follow-up herbicide. Plan now.</div>
+        </div>
+        
+        <div class="micro-scenario">
+            <p><strong>🚜 You find a threatened orchid patch underneath a gorse thicket you're treating. What's your immediate action?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro5')">Reveal</button>
+            <div id="micro5" style="display:none; margin-top:0.5rem;">STOP. Flag location. Do NOT spray. Hand-remove gorse around orchids. Report to land manager and NRE Tas. Legal protection overrides production.</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span>© AHCPMG301 · Prediction-First Learning</span>
+        <span>Remember: Learning happens in the gap between prediction and reality</span>
+        <span>Field judgement > content knowledge</span>
+    </footer>
+</div>
+
+<script>
+    function showTab(event, tabId) {
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleAnswer(id) {
+        let el = document.getElementById(id);
+        if (el.style.display === 'none' || !el.style.display) {
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    }
+
+    function revealMicro(id) {
+        let el = document.getElementById(id);
+        if (el.style.display === 'none' || !el.style.display) {
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>
