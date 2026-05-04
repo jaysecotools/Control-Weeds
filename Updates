@@ -1,9 +1,12 @@
-<!-- MEDIA TAB WITH WORKING VIDEOS -->
+<!-- MEDIA TAB - CLEAN VERSION -->
 <div id="media" class="tab-pane">
     <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
-    <p>Visual examples bring field signals and failure scenarios to life. <strong>Predict before you watch or view.</strong></p>
+    <p>Visual examples bring field signals and failure scenarios to life.</p>
 
-    <!-- Video 1 Prediction Trigger -->
+    <!-- Video Section -->
+    <h3><i class="fas fa-video"></i> Key Video Resources</h3>
+    
+    <!-- Video 1 Prediction Trigger (placed outside video container) -->
     <div class="prediction-card">
         <div class="prediction-question" onclick="toggleAnswer('videoPred1')">
             🎬 <strong>Before watching Video 1:</strong> What growth stage are these weeds in? What control method would you choose?
@@ -14,12 +17,14 @@
         </div>
     </div>
 
-    <!-- Video 1: Weed identification -->
+    <!-- Video 1 Container - Keep it simple, no extra divs inside -->
     <div class="media-container">
-        <div class="video-wrapper" id="video1">
+        <div class="video-wrapper">
             <iframe 
+                width="100%" 
+                height="100%" 
                 src="https://www.youtube.com/embed/dNbjTL21CLY" 
-                title="YouTube video player 1" 
+                title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -38,12 +43,14 @@
         </div>
     </div>
 
-    <!-- Video 2: Control methods -->
+    <!-- Video 2 Container -->
     <div class="media-container">
         <div class="video-wrapper">
             <iframe 
+                width="100%" 
+                height="100%" 
                 src="https://www.youtube.com/embed/b_GaUwNPKv8" 
-                title="YouTube video player 2" 
+                title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -52,7 +59,8 @@
         <p><strong>Video 2:</strong> Control methods and common application mistakes. Pay attention to the timing and technique shown.</p>
     </div>
 
-    <h3 id="photos-section"><i class="fas fa-camera"></i> Field Photo Gallery</h3>
+    <!-- Photo Gallery -->
+    <h3><i class="fas fa-camera"></i> Field Photo Gallery</h3>
     <p><strong>Instructor's note:</strong> For each photo, predict what's happening before revealing the answer.</p>
 
     <div class="photo-grid">
