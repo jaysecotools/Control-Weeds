@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#1a4a35">
-    <meta name="description" content="AHCPMG301 Weed Control · Prediction-First Learning · Field Judgement Training for Conservation and Ecosystem Management students">
     <title>AHCPMG301 · Control Weeds · Prediction-First Learning · Field Judgement</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ========== PWA META TAGS (ADD THIS BLOCK) ========== -->
     <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Weed Training">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a4a35">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <!-- ========== END PWA META TAGS ========== -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         /* ---------- GLOBAL RESET & VARIABLES ---------- */
         * {
@@ -1427,7 +1436,6 @@
         <span>Field judgement > content knowledge</span>
     </footer>
 </div>
-
 <script>
     // ========== DEBOUNCE UTILITY ==========
     let debounceTimer;
@@ -1463,9 +1471,21 @@
         }
     }
 
+    // ========== TAB SWITCHING ==========
+    function showTab(event, tabId) {
+        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        const activeButton = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (activeButton) activeButton.classList.add('active');
+        if (window.scrollTo) window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Save current tab to localStorage
+        localStorage.setItem('activeTab', tabId);
+    }
+
     // ========== CONFIDENCE RATING SYSTEM ==========
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize confidence buttons
+    function initConfidenceButtons() {
         document.querySelectorAll('.confidence-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const confidence = this.getAttribute('data-confidence');
@@ -1499,24 +1519,10 @@
                     localStorage.setItem('weedConfidence', JSON.stringify(savedConfidence));
                 }
             });
-            
-            // Load saved confidence
-            const targetId = btn.getAttribute('data-target');
-            const savedConfidence = JSON.parse(localStorage.getItem('weedConfidence') || '{}');
-            if (savedConfidence[targetId]) {
-                const fakeEvent = { target: btn };
-                // Don't auto-trigger, just highlight? Simpler to leave as is.
-            }
         });
-        
-        // Load saved quiz answers
-        loadQuizFromLocalStorage();
-        
-        // Check online status for videos
-        checkOnlineStatus();
-    });
-    
-    // ========== ONLINE STATUS CHECK FOR VIDEOS ==========
+    }
+
+    // ========== ONLINE STATUS CHECK ==========
     function checkOnlineStatus() {
         if (!navigator.onLine) {
             document.querySelectorAll('.video-wrapper iframe').forEach(iframe => {
@@ -1534,43 +1540,14 @@
         });
     }
 
-    // ========== TAB SWITCHING ==========
-    function showTab(event, tabId) {
-        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        const activeButton = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
-        if (activeButton) activeButton.classList.add('active');
-        if (window.scrollTo) window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        // Save current tab to localStorage
-        localStorage.setItem('activeTab', tabId);
-    }
-    
-    // Load last active tab
-    document.addEventListener('DOMContentLoaded', function() {
-        const lastTab = localStorage.getItem('activeTab');
-        if (lastTab && document.getElementById(lastTab)) {
-            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(lastTab).classList.add('active');
-            const tabButton = document.querySelector(`.tab-btn[data-tab="${lastTab}"]`);
-            if (tabButton) tabButton.classList.add('active');
-        }
-    });
-
-    // ========== QUIZ SYSTEM WITH PERSISTENCE ==========
+    // ========== QUIZ SYSTEM ==========
     const quizQuestions = [
-        { q: "After 90% visible kill of gorse, how many viable seeds remain per square metre?", options: ["Almost none", "Hundreds", "Thousands", "All of them"], correct: 2, explanation: "A single gorse bush produces 5,000-10,000 seeds annually. The seedbank remains largely intact. Follow-up for years is mandatory." },
-        { q: "You find pampas grass flowering in a national park. What's your first action?", options: ["Spray immediately", "Cut and leave", "Remove flower heads first", "Burn the area"], correct: 2, explanation: "Remove flower heads FIRST and bag them to prevent seed spread, then treat the plant. A single plume can release 100,000+ seeds." },
-        { q: "What is the minimum rainfast window for most systemic herbicides?", options: ["30 minutes", "2-6 hours", "24 hours", "1 week"], correct: 1, explanation: "Most systemic herbicides need 2-6 hours without rain for uptake. Always check the specific product label." },
-        { q: "What does patchy herbicide kill (same mix, same day) likely indicate?", options: ["Different weed species", "Equipment issue or early resistance", "Weather variation", "Normal outcome"], correct: 1, explanation: "Check calibration first. If consistent pattern persists across the site, consider resistance testing." },
-        { q: "When is BEST time to spray gorse with systemic herbicide?", options: ["Winter (dormant)", "During flowering", "Active growth (autumn/spring)", "During frost"], correct: 2, explanation: "Systemic herbicides need actively growing plants for translocation. Dormant or stressed plants won't uptake effectively." },
-        { q: "What is the single biggest misunderstanding in weed control?", options: ["Herbicide choice", "Spray timing", "Visible removal = success", "Weather conditions"], correct: 2, explanation: "Visible weed removal doesn't mean the seedbank is gone. The real infestation is underground. Follow-up for 5-7 years is essential." },
-        { q: "You're treating blackberry near a creek. What's your priority?", options: ["Use strongest chemical", "Check aquatic buffer zone", "Spray before rain", "Slash first"], correct: 1, explanation: "Some chemicals cannot be used within 20m-100m of water. Always check the label's aquatic buffer requirements first." },
-        { q: "What does waxy leaf beading indicate?", options: ["Healthy plant", "Poor spray uptake", "Too much water", "Fungal infection"], correct: 1, explanation: "Water beading on leaves means spray will also bead and run off. Add a surfactant/wetting agent to improve coverage." },
-        { q: "How long can gorse seed remain viable in soil?", options: ["2-3 years", "5-10 years", "30+ years", "1 year"], correct: 2, explanation: "Gorse seed can remain viable for 30+ years. This is why programs that stop at Year 2 fail. Real success requires 5-7 year follow-up." },
-        { q: "You have ONE access day per year to a remote property. What method do you prioritize?", options: ["Spot spraying", "Basal bark with residual", "Slashing", "Hand pulling"], correct: 1, explanation: "Persistent methods like basal bark with residual herbicide give the best long-term control when follow-up access is limited." }
+        { q: "After 90% visible kill of gorse, how many viable seeds remain per square metre?", options: ["Almost none", "Hundreds", "Thousands", "All of them"], correct: 2, explanation: "A single gorse bush produces 5,000-10,000 seeds annually." },
+        { q: "You find pampas grass flowering in a national park. What's your first action?", options: ["Spray immediately", "Cut and leave", "Remove flower heads first", "Burn the area"], correct: 2, explanation: "Remove flower heads FIRST and bag them to prevent seed spread." },
+        { q: "What is the minimum rainfast window for most systemic herbicides?", options: ["30 minutes", "2-6 hours", "24 hours", "1 week"], correct: 1, explanation: "Most systemic herbicides need 2-6 hours without rain." },
+        { q: "What does patchy herbicide kill likely indicate?", options: ["Different weed species", "Equipment issue or early resistance", "Weather variation", "Normal outcome"], correct: 1, explanation: "Check calibration first. Consider resistance testing." },
+        { q: "When is BEST time to spray gorse with systemic herbicide?", options: ["Winter (dormant)", "During flowering", "Active growth (autumn/spring)", "During frost"], correct: 2, explanation: "Systemic herbicides need actively growing plants." },
+        { q: "What is the single biggest misunderstanding in weed control?", options: ["Herbicide choice", "Spray timing", "Visible removal = success", "Weather conditions"], correct: 2, explanation: "Visible weed removal doesn't mean the seedbank is gone." }
     ];
 
     let quizAnswers = new Array(quizQuestions.length).fill(null);
@@ -1628,17 +1605,7 @@
     function updateScore() {
         const score = quizAnswers.filter((a, i) => a === quizQuestions[i].correct).length;
         const scoreDiv = document.getElementById('quiz-score');
-        if (scoreDiv) {
-            let message = '';
-            if (score === quizQuestions.length) {
-                message = '🏆 Excellent field judgement! You\'re ready for the field.';
-            } else if (score >= 7) {
-                message = '👍 Good work. Review the sections where you scored lower.';
-            } else {
-                message = '📚 Keep studying. Revisit the prediction cards and micro-scenarios above.';
-            }
-            scoreDiv.innerHTML = `<strong>Score: ${score}/${quizQuestions.length}</strong><br><small>${message}</small>`;
-        }
+        if (scoreDiv) scoreDiv.innerHTML = `<strong>Score: ${score}/${quizQuestions.length}</strong>`;
     }
 
     function saveQuizToLocalStorage() {
@@ -1663,16 +1630,66 @@
         renderQuiz();
     }
 
-    // ========== SERVICE WORKER FOR OFFLINE ==========
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js').then(reg => {
-            console.log('Service Worker registered');
-        }).catch(err => {
-            console.log('Service Worker registration failed:', err);
+    // ========== PART 6: TAB PERSISTENCE FROM URL PARAMETERS (ADD THIS) ==========
+    function handleDeepLinks() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tabParam = urlParams.get('tab');
+        if (tabParam && document.getElementById(tabParam)) {
+            // Remove active class from all panes and buttons
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            // Show the requested tab
+            document.getElementById(tabParam).classList.add('active');
+            const activeButton = document.querySelector(`.tab-btn[data-tab="${tabParam}"]`);
+            if (activeButton) activeButton.classList.add('active');
+        } else {
+            // Load last active tab from localStorage
+            const lastTab = localStorage.getItem('activeTab');
+            if (lastTab && document.getElementById(lastTab)) {
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.getElementById(lastTab).classList.add('active');
+                const tabButton = document.querySelector(`.tab-btn[data-tab="${lastTab}"]`);
+                if (tabButton) tabButton.classList.add('active');
+            }
+        }
+    }
+
+    // ========== OFFLINE WARNING (ADD THIS) ==========
+    function addOfflineWarning() {
+        window.addEventListener('offline', () => {
+            const warning = document.createElement('div');
+            warning.style.cssText = 'position:fixed; bottom:0; left:0; right:0; background:#c7452b; color:white; text-align:center; padding:0.5rem; z-index:1000; font-size:0.8rem;';
+            warning.innerHTML = '⚠️ You are offline. Some features (videos, external links) may not work.';
+            document.body.appendChild(warning);
+            setTimeout(() => warning.style.display = 'none', 5000);
         });
     }
-</script>
 
+    // ========== SERVICE WORKER REGISTRATION ==========
+    function registerServiceWorker() {
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then(reg => {
+                    console.log('Service Worker registered:', reg);
+                }).catch(err => {
+                    console.log('Service Worker registration failed:', err);
+                });
+            });
+        }
+    }
+
+    // ========== INITIALIZE EVERYTHING ON PAGE LOAD ==========
+    document.addEventListener('DOMContentLoaded', function() {
+        initConfidenceButtons();
+        checkOnlineStatus();
+        loadQuizFromLocalStorage();
+        handleDeepLinks();      // PART 6: Handles ?tab=weedlib from PWA shortcuts
+        addOfflineWarning();    // PART 5: Adds offline warning banner
+        registerServiceWorker();
+    });
+</script>
+                        
 <script>
     // ========== MANIFEST.JSON FOR PWA ==========
     // Create this file as manifest.json in the same folder
