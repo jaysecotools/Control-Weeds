@@ -50,7 +50,18 @@
         .micro-scenario { background: #f9faf5; border-radius: 0.8rem; padding: 0.8rem; margin: 0.6rem 0; border: 1px solid #cbdac2; }
         .btn-reveal { background: var(--accent); color: #1e3a2c; border: none; padding: 0.3rem 1rem; border-radius: 60px; cursor: pointer; font-size: 0.75rem; margin-top: 0.5rem; }
         .footer { background: #0d3526; color: #f2f2e6; padding: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.75rem; }
-        @media (max-width: 700px) { .tab-pane { padding: 1rem; } .tab-btn span { display: none; } }
+        
+        /* New styles for media integration */
+        .media-container { margin: 1.5rem 0; border-radius: 1rem; overflow: hidden; background: #f8f9fa; padding: 1rem; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */ height: 0; overflow: hidden; border-radius: 0.8rem; margin-bottom: 1rem; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .photo-card { background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+        .photo-card img { width: 100%; height: 180px; object-fit: cover; display: block; background: #e9ecef; }
+        .photo-caption { padding: 0.5rem; font-size: 0.8rem; font-weight: bold; background: white; }
+        .media-link { background: #eef2f5; border-radius: 1rem; padding: 0.5rem 1rem; margin-top: 0.5rem; display: inline-block; font-size: 0.8rem; }
+        .media-link i { margin-right: 5px; }
+        @media (max-width: 700px) { .tab-pane { padding: 1rem; } .tab-btn span { display: none; } .photo-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -62,6 +73,7 @@
             <span><i class="fas fa-question-circle"></i> Predict before you read</span>
             <span><i class="fas fa-eye"></i> Field signals</span>
             <span><i class="fas fa-trap"></i> Confidence traps</span>
+            <span><i class="fas fa-photo-video"></i> Visual Learning</span>
         </div>
         <p style="margin-top: 0.8rem;">This is not a reference. This is <strong>judgement training</strong>. For each concept, <strong>predict what happens</strong> before revealing the answer. Learning happens in the gap between expectation and reality.</p>
     </div>
@@ -77,6 +89,7 @@
         <button class="tab-btn" onclick="showTab(event, 'traps')"><i class="fas fa-trap"></i><span> Confidence traps</span></button>
         <button class="tab-btn" onclick="showTab(event, 'indigenous')"><i class="fas fa-hands"></i><span> Indigenous</span></button>
         <button class="tab-btn" onclick="showTab(event, 'micro')"><i class="fas fa-comment-dots"></i><span> Micro-scenarios</span></button>
+        <button class="tab-btn" onclick="showTab(event, 'media')"><i class="fas fa-photo-video"></i><span> Media & Examples</span></button>
     </div>
 
     <!-- ECOLOGY with Cause→Effect→Response -->
@@ -92,7 +105,7 @@
         <div class="prediction-card">
             <div class="prediction-question" onclick="toggleAnswer('eco2')">🔥 <strong>Cause:</strong> High-intensity fire through gorse-infested bushland. <strong>Predict:</strong> What does the site look like 12 months post-fire?</div>
             <div id="eco2" class="prediction-answer"><strong>Effect:</strong> Gorse resprouts vigorously from root crowns. Seedbank stimulated. Often denser than pre-fire.<br>
-            <strong>Response:</strong> Fire is NOT control. Must follow with herbicide within 6-12 months. Never burn without follow-up plan.</div>
+            <strong>Response:</strong> Fire is NOT control. Must follow with herbicide within 6-12 months. Never burn without follow-up plan. <span class="media-link" onclick="showTab(event, 'media'); document.getElementById('video1').scrollIntoView();"><i class="fas fa-video"></i> Watch video example of post-fire regrowth</span></div>
         </div>
 
         <div class="field-signal"><i class="fas fa-eye"></i> <strong>Field signal:</strong> Even-aged weed seedlings across a large area = recent disturbance (fire, grading, flood). This is your window for prevention.</div>
@@ -109,7 +122,7 @@
         </div>
 
         <div class="prediction-card">
-            <div class="prediction-question" onclick="toggleAnswer('fail2')">🌾 <strong>Situation:</strong> Landowner slashes 5ha of serrated tussock in December (seed heads present). <strong>Predict:</strong> What happens over next 2 years?</div>
+            <div class="prediction-question" onclick="toggleAnswer('fail2')">🌾 <strong>Situation:</strong> Landowner slashes 5ha of serrated tussock in December (seed heads present). <strong>Predict:</strong> What happens over next 2 years? <span class="media-link" onclick="showTab(event, 'media'); document.getElementById('photos-section').scrollIntoView();"><i class="fas fa-image"></i> See photo of seed heads</span></div>
             <div id="fail2" class="prediction-answer"><strong>Outcome:</strong> Infestation expands 3-5x. Slashing spread thousands of viable seeds per plant onto bare ground.<br>
             <strong>Correct:</strong> Never slash after seed set. Spot spray selective herbicides BEFORE seed heads emerge.</div>
         </div>
@@ -332,6 +345,56 @@
         </div>
     </div>
 
+    <!-- NEW MEDIA TAB: VIDEOS AND PHOTOS -->
+    <div id="media" class="tab-pane">
+        <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
+        <p>Visual examples bring field signals and failure scenarios to life. Watch, observe, and connect to the concepts above.</p>
+
+        <!-- Video Section -->
+        <h3><i class="fas fa-video"></i> Key Video Resources</h3>
+        <div class="media-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="YouTube video player 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Video 1:</strong> Weed identification and early intervention. Notice the growth habits and how to spot seedlings.</p>
+        </div>
+
+        <div class="media-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="YouTube video player 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Video 2:</strong> Control methods and common application mistakes. Pay attention to the timing and technique shown.</p>
+        </div>
+
+        <!-- Photo Gallery Section -->
+        <h3 id="photos-section"><i class="fas fa-camera"></i> Field Photo Gallery</h3>
+        <p><strong>Instructor's note:</strong> These photos from local sites illustrate the field signals described in this resource.</p>
+        
+        <div class="photo-grid">
+            <!-- Example Photo 1: Replace 'path/to/your/photo1.jpg' with your actual image filename -->
+            <div class="photo-card">
+                <img src="path/to/your/photo1.jpg" alt="Weed field signal example 1" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e9ecef/495057?text=Add+Photo+1';">
+                <div class="photo-caption">📷 Gorse resprouting after fire</div>
+            </div>
+            <!-- Example Photo 2 -->
+            <div class="photo-card">
+                <img src="path/to/your/photo2.jpg" alt="Weed field signal example 2" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e9ecef/495057?text=Add+Photo+2';">
+                <div class="photo-caption">📷 Even-aged seedling cohort</div>
+            </div>
+            <!-- Example Photo 3 -->
+            <div class="photo-card">
+                <img src="path/to/your/photo3.jpg" alt="Weed field signal example 3" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e9ecef/495057?text=Add+Photo+3';">
+                <div class="photo-caption">📷 Patchy herbicide kill pattern</div>
+            </div>
+            <!-- Example Photo 4 -->
+            <div class="photo-card">
+                <img src="path/to/your/photo4.jpg" alt="Weed field signal example 4" onerror="this.onerror=null; this.src='https://placehold.co/400x300/e9ecef/495057?text=Add+Photo+4';">
+                <div class="photo-caption">📷 Serrated tussock seed heads</div>
+            </div>
+        </div>
+        <p><i class="fas fa-info-circle"></i> To add your own photos: Save image files to the same folder as this page, then update the <code>src="path/to/your/photoX.jpg"</code> above with the correct filenames.</p>
+    </div>
+
     <footer class="footer">
         <span>© AHCPMG301 · Prediction-First Learning</span>
         <span>Remember: Learning happens in the gap between prediction and reality</span>
@@ -341,10 +404,29 @@
 
 <script>
     function showTab(event, tabId) {
-        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
+        // Allow calling from media links
+        if (event && event.currentTarget) {
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        } else {
+            // For programmatic calls (e.g., from media-link)
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            // Find the button that corresponds to this tab and make it active
+            const buttons = document.querySelectorAll('.tab-btn');
+            for (let btn of buttons) {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(tabId)) {
+                    btn.classList.add('active');
+                    break;
+                } else if (btn.innerText.toLowerCase().includes(tabId.toLowerCase())) {
+                    btn.classList.add('active');
+                    break;
+                }
+            }
+        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
