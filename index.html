@@ -873,101 +873,101 @@
         </div>
     </div>
 
-    <!-- ========== MEDIA & EXAMPLES TAB ========== -->
-    <div id="media" class="tab-pane">
-        <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
-        <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
+<!-- ========== MEDIA & EXAMPLES TAB ========== -->
+<div id="media" class="tab-pane">
+    <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
+    <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
 
-        <h3><i class="fas fa-video"></i> Key Video Resources</h3>
+    <h3><i class="fas fa-video"></i> Key Video Resources</h3>
 
-        <!-- Video 1 Prediction Trigger -->
-        <div class="prediction-card">
-            <div class="prediction-question" onclick="toggleAnswer('videoPred1')">
-                🎬 <strong>Before watching Video 1:</strong> What growth stage are these weeds in? What control method would you choose?
-            </div>
-            <div id="videoPred1" class="prediction-answer">
-                After watching, compare: look for leaf shape, stem development, and whether seed heads are forming.
-                Active growth phase = systemic herbicide window.
-            </div>
+    <!-- Video 1 Prediction Trigger -->
+    <div class="prediction-card">
+        <div class="prediction-question" onclick="toggleAnswer('videoPred1')">
+            🎬 <strong>Before watching Video 1:</strong> What growth stage are these weeds in? What control method would you choose?
         </div>
-
-        <!-- Video 1: Gorse / Serrated Tussock identification and control (functional embed) -->
-        <div class="media-container">
-            <div class="video-wrapper" id="video1">
-                <iframe 
-                    src="https://www.youtube.com/embed/6Y5FAC8rO9k" 
-                    title="Weed identification and control methods" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <p><strong>Video 1:</strong> Weed identification and early intervention. Notice the growth habits, leaf structure, and how to spot seedlings before they set seed.</p>
+        <div id="videoPred1" class="prediction-answer">
+            After watching, compare: look for leaf shape, stem development, and whether seed heads are forming.
+            Active growth phase = systemic herbicide window.
         </div>
-
-        <!-- Video 2 Prediction Trigger -->
-        <div class="prediction-card">
-            <div class="prediction-question" onclick="toggleAnswer('videoPred2')">
-                🎬 <strong>Before watching Video 2:</strong> What common application mistake is about to be shown? Predict.
-            </div>
-            <div id="videoPred2" class="prediction-answer">
-                Focus on nozzle height, walking speed, and weather indicators. Compare with your prediction after watching.
-            </div>
-        </div>
-
-        <!-- Video 2: Herbicide application best practices (functional embed) -->
-        <div class="media-container">
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/3pDqRkvJqNA" 
-                    title="Herbicide application techniques and common mistakes" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <p><strong>Video 2:</strong> Correct application techniques, calibration, and common mistakes that reduce efficacy.</p>
-        </div>
-
-        <h3 id="photos-section"><i class="fas fa-camera"></i> Field Photo Gallery</h3>
-        <p><strong>Instructor's note:</strong> For each photo, predict what's happening before revealing the answer.</p>
-
-        <div class="photo-grid">
-            <div class="photo-card">
-                <img src="https://placehold.co/400x300/e9ecef/495057?text=Gorse+resprouting+post-fire" alt="Gorse resprouting">
-                <div class="photo-caption">
-                    📷 Gorse resprouting after fire
-                    <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
-                    <span style="display:none;">Fire alone doesn't kill gorse. Follow-up herbicide needed within 6-12 months.</span>
-                </div>
-            </div>
-            <div class="photo-card">
-                <img src="https://placehold.co/400x300/e9ecef/495057?text=Even-aged+seedling+cohort" alt="Even-aged seedlings">
-                <div class="photo-caption">
-                    📷 Even-aged seedling cohort
-                    <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
-                    <span style="display:none;">Recent disturbance (fire/flood/grading). Act now before seed set.</span>
-                </div>
-            </div>
-            <div class="photo-card">
-                <img src="https://placehold.co/400x300/e9ecef/495057?text=Patchy+herbicide+kill" alt="Patchy kill">
-                <div class="photo-caption">
-                    📷 Patchy herbicide kill pattern
-                    <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
-                    <span style="display:none;">Could be equipment issue (nozzle block) or early resistance. Check calibration first.</span>
-                </div>
-            </div>
-            <div class="photo-card">
-                <img src="https://placehold.co/400x300/e9ecef/495057?text=Serrated+tussock+seed+heads" alt="Serrated tussock">
-                <div class="photo-caption">
-                    📷 Serrated tussock seed heads
-                    <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
-                    <span style="display:none;">NEVER slash after seed set. Each plant = thousands of viable seeds spread.</span>
-                </div>
-            </div>
-        </div>
-        <p><i class="fas fa-info-circle"></i> To add your own photos: Replace the placeholder image URLs with your actual image filenames.</p>
     </div>
+
+    <!-- Video 1 - WORKING ID -->
+    <div class="media-container">
+        <div class="video-wrapper" id="video1">
+            <iframe 
+                src="https://www.youtube.com/embed/dNbjTL21CLY" 
+                title="Weed identification and control methods" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p><strong>Video 1:</strong> Weed identification and early intervention. Notice the growth habits, leaf structure, and how to spot seedlings before they set seed.</p>
+    </div>
+
+    <!-- Video 2 Prediction Trigger -->
+    <div class="prediction-card">
+        <div class="prediction-question" onclick="toggleAnswer('videoPred2')">
+            🎬 <strong>Before watching Video 2:</strong> What common application mistake is about to be shown? Predict.
+        </div>
+        <div id="videoPred2" class="prediction-answer">
+            Focus on nozzle height, walking speed, and weather indicators. Compare with your prediction after watching.
+        </div>
+    </div>
+
+    <!-- Video 2 - WORKING ID -->
+    <div class="media-container">
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/b_GaUwNPKv8" 
+                title="Herbicide application techniques and common mistakes" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p><strong>Video 2:</strong> Correct application techniques, calibration, and common mistakes that reduce efficacy.</p>
+    </div>
+
+    <h3 id="photos-section"><i class="fas fa-camera"></i> Field Photo Gallery</h3>
+    <p><strong>Instructor's note:</strong> For each photo, predict what's happening before revealing the answer.</p>
+
+    <div class="photo-grid">
+        <div class="photo-card">
+            <img src="https://placehold.co/400x300/e9ecef/495057?text=Gorse+resprouting+post-fire" alt="Gorse resprouting">
+            <div class="photo-caption">
+                📷 Gorse resprouting after fire
+                <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
+                <span style="display:none;">Fire alone doesn't kill gorse. Follow-up herbicide needed within 6-12 months.</span>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/400x300/e9ecef/495057?text=Even-aged+seedling+cohort" alt="Even-aged seedlings">
+            <div class="photo-caption">
+                📷 Even-aged seedling cohort
+                <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
+                <span style="display:none;">Recent disturbance (fire/flood/grading). Act now before seed set.</span>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/400x300/e9ecef/495057?text=Patchy+herbicide+kill" alt="Patchy kill">
+            <div class="photo-caption">
+                📷 Patchy herbicide kill pattern
+                <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
+                <span style="display:none;">Could be equipment issue (nozzle block) or early resistance. Check calibration first.</span>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/400x300/e9ecef/495057?text=Serrated+tussock+seed+heads" alt="Serrated tussock">
+            <div class="photo-caption">
+                📷 Serrated tussock seed heads
+                <button class="btn-reveal" style="margin-left:5px;" onclick="this.nextElementSibling.style.display='block'">Predict → Show</button>
+                <span style="display:none;">NEVER slash after seed set. Each plant = thousands of viable seeds spread.</span>
+            </div>
+        </div>
+    </div>
+    <p><i class="fas fa-info-circle"></i> To add your own photos: Replace the placeholder image URLs with your actual image filenames.</p>
+</div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
