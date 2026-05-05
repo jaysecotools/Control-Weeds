@@ -1,183 +1,25 @@
-You don’t need a full rewrite — that would risk breaking your JS hooks, CSS, and learning flow. The right move is a surgical swap: fix only the parts that are inaccurate while keeping every ID, class, and structure intact.
-
-Below is a drop-in patch. You can copy and replace only these sections in your existing HTML.
-
-
----
-
-🔧 ✅ 1. LEGISLATION FIX (critical)
-
-Replace this block:
-
-<h4>Weed Management Act 2020 (Tasmania)</h4>
-<p>Declared weeds <strong>must</strong> be controlled on your land. It is an offence to propagate, spread, or sell declared weeds. Environmental weeds have no legal requirement but are best practice to control.</p>
-
-With this:
-
-<h4>Weed Management Act 1999 (Tasmania)</h4>
-<p>Declared weeds <strong>must</strong> be controlled on your land. It is an offence to propagate, spread, or sell declared weeds. Environmental weeds are not always declared under legislation, but may still require control under land management responsibilities, local regulations, or conservation agreements.</p>
-
-
----
-
-🔧 ✅ 2. GORSE FIRE SECTION (accuracy tweak)
-
-Replace:
-
-<strong>Response:</strong> Fire is NOT control. Must follow with herbicide within 6-12 months.
-Never burn without follow-up plan.
-
-With:
-
-<strong>Response:</strong> Fire alone is not effective control and will usually increase gorse recruitment without follow-up treatment. Must follow with herbicide within 6–12 months.
-Never burn without a follow-up plan.
-
-
----
-
-🔧 ✅ 3. GLYPHOSATE IN WINTER (nuance fix)
-
-Replace:
-
-<strong>Outcome:</strong> <20% kill. Gorse unaffected – plant wasn't actively growing,
-so systemic herbicide didn't translocate.
-
-With:
-
-<strong>Outcome:</strong> Often poor control (<20–50%) under cold, frosty conditions. Gorse may be less affected because the plant isn't actively growing, so systemic herbicide translocation is reduced.
-
-
----
-
-🔧 ✅ 4. RAINFAST WINDOW (important correction)
-
-Replace:
-
-<strong>Correct:</strong> Check rainfast window on label (2-24 hours). Never spray if rain due within that window.
-
-With:
-
-<strong>Correct:</strong> Check rainfast window on the product label (typically 2–24 hours depending on formulation). Never spray if rain is expected within that window.
-
-
----
-
-🔧 ✅ 5. WATER BUFFER (high-risk misconception)
-
-Replace:
-
-<strong>Solution:</strong> Cut stump on creek buffer zone (no chem). Basal bark on upper slope.
-
-With:
-
-<strong>Solution:</strong> Follow label-specific buffer zones near waterways (often 5–100m depending on product). Use cut stump or non-chemical methods in restricted zones. Basal bark on upper slope where permitted.
-
-
----
-
-🔧 ✅ 6. SEEDBANK LONGEVITY (tighten accuracy)
-
-Replace:
-
-<strong>Critical insight:</strong> Gorse seed remains viable for <strong>30+ years</strong>.
-
-With:
-
-<strong>Critical insight:</strong> Gorse seed remains viable for <strong>30–40+ years</strong> depending on soil conditions.
-
-
----
-
-🔧 ✅ 7. WIND SPEED RULE (make label-based)
-
-Replace:
-
-<li>✗ Spray when wind >15km/h or during temperature inversion</li>
-
-With:
-
-<li>✗ Spray outside label conditions (commonly >15 km/h wind, gusty conditions, or during temperature inversion)</li>
-
-
----
-
-🔧 ✅ 8. RESISTANCE STATEMENT (remove overclaim)
-
-Replace:
-
-The same WILL happen with woody weeds if we don't change practices.
-
-With:
-
-The same risk applies to woody weeds if practices don't change.
-
-
----
-
-🔧 ✅ 9. DPIPWE → NRE TAS (consistency fix)
-
-Replace:
-
-<h4>DPIPWE · Weed Maps</h4>
-
-With:
-
-<h4>NRE Tas · Weed Maps</h4>
-
-
----
-
-🔧 ✅ 10. OPTIONAL (but high-quality) – Banana Passionfruit taxonomy
-
-Replace:
-
-<h4>Banana Passionfruit (Passiflora mollissima)</h4>
-
-With:
-
-<h4>Banana Passionfruit (Passiflora tripartita var. mollissima)</h4>
-
-
----
-
-🧠 Why this approach works
-
-✅ Zero impact on JS (all IDs untouched)
-
-✅ Zero impact on CSS
-
-✅ No layout shifts
-
-✅ Keeps your teaching flow intact
-
-✅ Fixes real-world credibility issues
-
-
-
----
-
-🚨 Final note (important for your context)
-
-What you’ve built isn’t just content — it’s decision training.
-That means accuracy matters most in the edges, not the basics.
-
-These fixes specifically remove:
-
-Legal inaccuracies (biggest risk)
-
-Over-simplifications that create bad habits
-
-Statements that could get students into trouble in real jobs
-
-
-
----
-
-If you want next-level refinement, I’d suggest:
-
-A Tasmania-specific herbicide table (label-aligned)
-
-Or a “decision under uncertainty” mode where multiple answers are valid depending on conditions
-
-
-Both would elevate this from good training → industry-grade tool.
+<!-- ========== WEED LIBRARY TAB ========== -->
+    <div id="weedlib" class="tab-pane">
+        <h2><i class="fas fa-leaf"></i> Weed Library · Identification & Resources (Photos Coming)</h2>
+        <p><span class="weed-badge declared">Declared Weed</span> = Legally required to control · <span class="weed-badge environmental">Environmental Weed</span> = Threat to native ecosystems</p>
+        <p><strong>For current control methods and herbicide recommendations, follow the NRE Tas links below each weed.</strong></p>
+
+        <div class="weed-grid">
+            <!-- Declared Weeds -->
+            <div class="weed-card"><img src="weeds/gorse.jpg" alt="Gorse" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Gorse+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Gorse (Ulex europaeus)</h4><p><strong>Key ID:</strong> Dense spiny shrub, bright yellow flowers (winter-spring), seed pods explode when ripe.</p><p><strong>Habitat:</strong> Roadsides, pasture, bushland, coastal areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/gorse" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/montpelier-broom.jpg" alt="Montpelier Broom" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Montpelier+Broom+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Montpelier Broom (Genista monspessulana)</h4><p><strong>Key ID:</strong> Soft green leaves, yellow pea-flowers (spring), flat seed pods with hairs.</p><p><strong>Habitat:</strong> Roadsides, bushland, disturbed areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/montpelier-broom" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/ragwort.jpg" alt="Ragwort" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Ragwort+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Ragwort (Jacobaea vulgaris)</h4><p><strong>Key ID:</strong> Yellow daisy flowers, deeply lobed leaves, toxic to livestock.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/ragwort" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/pampas-grass.jpg" alt="Pampas Grass" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Pampas+Grass+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Pampas Grass (Cortaderia selloana)</h4><p><strong>Key ID:</strong> Large fluffy white/pink plumes (summer), sharp-edged leaves, grows 2-4m tall.</p><p><strong>Habitat:</strong> Roadsides, cliffs, logged areas, coastal.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/pampas-grass" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/boneseed.jpg" alt="Boneseed" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Boneseed+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Boneseed (Chrysanthemoides monilifera)</h4><p><strong>Key ID:</strong> Yellow daisy flowers (winter-spring), fleshy black berries, toothed leaves.</p><p><strong>Habitat:</strong> Coastal areas, roadsides, bushland.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/boneseed" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/blackberry.jpg" alt="Blackberry" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Blackberry+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Blackberry (Rubus fruticosus agg.)</h4><p><strong>Key ID:</strong> Prickly arching canes, white/pink flowers, black berries (summer).</p><p><strong>Habitat:</strong> Creeksides, roadsides, pasture, bushland edges.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/blackberry" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+
+            <!-- Environmental Weeds -->
+            <div class="weed-card"><img src="weeds/capeweed.jpg" alt="Capeweed" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Capeweed+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Capeweed (Arctotheca calendula)</h4><p><strong>Key ID:</strong> Yellow daisy flowers with dark centre, silver-grey lobed leaves, prostrate rosette.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://weeds.org.au/profiles/capeweed/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/banana-passionfruit.jpg" alt="Banana Passionfruit" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Banana+Passionfruit+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Banana Passionfruit (Passiflora tripartita var. mollissima)</h4><p><strong>Key ID:</strong> Climbing vine, pink tubular flowers, yellow banana-shaped fruit, velvety leaves.</p><p><strong>Habitat:</strong> Rainforest edges, roadsides, gullies.</p><a href="https://weeds.org.au/profiles/passiflora-mollissima/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/spear-thistle.jpg" alt="Spear Thistle" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Spear+Thistle+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Spear Thistle (Cirsium vulgare)</h4><p><strong>Key ID:</strong> Purple flower heads, spiny winged stems, deeply lobed spiny leaves.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://weeds.org.au/profiles/spear-thistle/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/cotoneaster.jpg" alt="Cotoneaster" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Cotoneaster+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Cotoneaster (Cotoneaster glaucophyllus)</h4><p><strong>Key ID:</strong> Evergreen shrub, small white/pink flowers, red berries, glossy leaves.</p><p><strong>Habitat:</strong> Bushland, roadsides, rocky outcrops.</p><a href="https://weeds.org.au/profiles/cotoneaster/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/mirror-bush.jpg" alt="Mirror Bush" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Mirror+Bush+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Mirror Bush (Coprosma repens)</h4><p><strong>Key ID:</strong> Shiny dark green leaves, orange-red berries, dense growth habit.</p><p><strong>Habitat:</strong> Coastal areas, roadsides, bushland edges.</p><a href="https://weeds.org.au/profiles/coprosma-repens/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/sweet-pittosporum.jpg" alt="Sweet Pittosporum" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Sweet+Pittosporum+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Sweet Pittosporum (Pittosporum undulatum)</h4><p><strong>Key ID:</strong> Dark green wavy leaves, cream flowers (spring), orange berries with sticky seeds.</p><p><strong>Habitat:</strong> Wet forests, gullies, urban bushland.</p><a href="https://weeds.org.au/profiles/pittosporum-undulatum/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+        </div>
+        <div class="disclaimer"><i class="fas fa-info-circle"></i> <strong>Photo placeholder notice:</strong> Add your own photos to the <code>weeds/</code> folder with matching filenames (e.g., <code>gorse.jpg</code>). Current control recommendations change — always check NRE Tas website for up-to-date advice.</div>
+    </div>
