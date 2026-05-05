@@ -1384,51 +1384,55 @@ Never burn without a follow-up plan.
         </div>
     </div>
 
-    <!-- ========== MEDIA TAB ========== -->
-    <div id="media" class="tab-pane">
-        <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
-        <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
+<!-- ========== MEDIA TAB ========== -->
+<div id="media" class="tab-pane">
+    <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
+    <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
 
-        <h3><i class="fas fa-video"></i> Key Video Resources</h3>
+    <h3><i class="fas fa-video"></i> Key Video Resources</h3>
 
-        <div class="prediction-card">
-            <button class="prediction-question" onclick="toggleAnswer('videoPred1')" aria-expanded="false" aria-controls="videoPred1">
-                🎬 <strong>Before watching Video 1:</strong> What growth stage are these weeds in? What control method would you choose?
-            </button>
-            <div id="videoPred1" class="prediction-answer">
-                After watching, compare: look for leaf shape, stem development, and whether seed heads are forming.
-                Active growth phase = systemic herbicide window.
-            </div>
+    <!-- VIDEO 1 -->
+    <div class="prediction-card">
+        <button class="prediction-question" onclick="toggleAnswer('videoPred1')" aria-expanded="false" aria-controls="videoPred1">
+            🎬 <strong>Before watching Video 1:</strong> If you had a property with weeds, how would you decide where to control first—and where not to disturb?
+        </button>
+        <div id="videoPred1" class="prediction-answer">
+            After watching, compare: the video explains integrated weed management based on ecological resilience.
+            Key idea: prioritise areas of moderate resilience, protect high-quality areas, and plan long-term for degraded sites rather than treating everything the same.
         </div>
-
-        <div class="media-container">
-            <div class="video-wrapper" id="video1">
-                <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Weed identification" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p><strong>Video 1:</strong> Weed identification and early intervention. Notice the growth habits, leaf structure, and how to spot seedlings before they set seed.</p>
-        </div>
-
-        <div class="prediction-card">
-            <button class="prediction-question" onclick="toggleAnswer('videoPred2')" aria-expanded="false" aria-controls="videoPred2">
-                🎬 <strong>Before watching Video 2:</strong> What common application mistake is about to be shown? Predict.
-            </button>
-            <div id="videoPred2" class="prediction-answer">
-                Focus on nozzle height, walking speed, and weather indicators. Compare with your prediction after watching.
-            </div>
-        </div>
-
-        <div class="media-container">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Control methods" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p><strong>Video 2:</strong> Control methods and common application mistakes. Pay attention to calibration and weather awareness.</p>
-        </div>
-
-        <h3><i class="fas fa-camera"></i> Field Photo Gallery</h3>
-       <p><strong>In Development <!-- Add your photos to the <code>weeds/</code> folder with these filenames:</strong><br>
-        gorse.jpg, montpelier-broom.jpg, ragwort.jpg, pampas-grass.jpg, boneseed.jpg, blackberry.jpg,<br>
-        capeweed.jpg, banana-passionfruit.jpg, spear-thistle.jpg, cotoneaster.jpg, mirror-bush.jpg, sweet-pittosporum.jpg</p> -->
     </div>
+
+    <div class="media-container">
+        <div class="video-wrapper" id="video1">
+            <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Integrated weed management and resilience" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p><strong>Video 1:</strong> Explains integrated weed management using ecological resilience. Focus on how site condition (high, moderate, poor resilience) determines control strategy, and why not all areas should be treated the same.</p>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="prediction-card">
+        <button class="prediction-question" onclick="toggleAnswer('videoPred2')" aria-expanded="false" aria-controls="videoPred2">
+            🎬 <strong>Before watching Video 2:</strong> Should all non-native plants be removed from a natural area? Why or why not?
+        </button>
+        <div id="videoPred2" class="prediction-answer">
+            After watching, compare: the video challenges this assumption.
+            Key ideas: environmental weeds are defined by impact (not origin), disturbance drives weed invasion, and some weeds are symptoms (passengers) rather than causes (drivers).
+            Removing plants without understanding the system can cause harm.
+        </div>
+    </div>
+
+    <div class="media-container">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Environmental weeds and ecological principles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p><strong>Video 2:</strong> Introduces ecological principles behind weed management. Focus on disturbance, opportunistic vs competitive species, and the difference between driver and passenger weeds.</p>
+    </div>
+
+    <h3><i class="fas fa-camera"></i> Field Photo Gallery</h3>
+    <p><strong>In Development <!-- Add your photos to the <code>weeds/</code> folder with these filenames:</strong><br>
+    gorse.jpg, montpelier-broom.jpg, ragwort.jpg, pampas-grass.jpg, boneseed.jpg, blackberry.jpg,<br>
+    capeweed.jpg, banana-passionfruit.jpg, spear-thistle.jpg, cotoneaster.jpg, mirror-bush.jpg, sweet-pittosporum.jpg</p> -->
+</div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
