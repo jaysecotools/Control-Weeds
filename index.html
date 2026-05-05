@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Control Weeds · Tasmanian Learning Resource</title>
+    <title>Control Weeds · Learning Resource</title>
     
-    <!-- ========== PWA META TAGS ========== -->
+    <!-- ========== PWA META TAGS (ADD THIS BLOCK) ========== -->
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Weed Training TAS">
+    <meta name="apple-mobile-web-app-title" content="Weed Training">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#1a4a35">
     <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <!-- ========== END PWA META TAGS ========== -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -758,7 +759,7 @@
     <div class="hero">
         <h1>
             <i class="fas fa-brain"></i>
-            Control Weeds · Tasmanian Learning Resource
+            Control Weeds · Learning Resource
         </h1>
         <div class="badge-row">
             <span><i class="fas fa-chart-line"></i> Cause → Effect → Response</span>
@@ -766,9 +767,8 @@
             <span><i class="fas fa-eye"></i> Field signals</span>
             <span><i class="fas fa-trap"></i> Confidence traps</span>
             <span><i class="fas fa-photo-video"></i> Visual learning</span>
-            <span><i class="fas fa-leaf"></i> 18 Tasmanian weeds</span>
+            <span><i class="fas fa-leaf"></i> 18 weeds covered</span>
             <span><i class="fas fa-chart-simple"></i> Confidence tracking</span>
-            <span><i class="fas fa-gavel"></i> Biosecurity Act 2019 (TAS)</span>
         </div>
         <p style="margin-top: 0.8rem;">
             This is not a reference. This is <strong>judgement training</strong>.
@@ -778,7 +778,7 @@
         <div class="disclaimer" style="margin-top: 1rem; background: rgba(0,0,0,0.2); border-left-color: var(--accent);">
             <i class="fas fa-shield-alt"></i>
             <strong>Training tool only:</strong> This builds field judgement. Always follow product labels,
-            Tasmanian legislation, and site-specific risk assessment. For current control guidelines,
+            legislation, and site-specific risk assessment. For current control guidelines,
             refer to NRE Tas and Weeds Australia websites.
         </div>
     </div>
@@ -805,27 +805,20 @@
 
     <!-- ========== ECOLOGY TAB ========== -->
     <div id="ecology" class="tab-pane active">
-        <h2><i class="fas fa-seedling"></i> Weed ecology · Cause → Effect → Response (Tasmanian Context)</h2>
-        
-        <div class="info-card">
-            <i class="fas fa-question-circle"></i>
-            <h4>What is a weed? (Tasmanian definition)</h4>
-            <p>Under the <strong>Biosecurity Act 2019 (Tasmania)</strong>, a weed is any plant that requires active management to prevent spread, economic loss, or environmental harm. Weeds are context-dependent — a plant may be a weed in the Tasmanian Wilderness World Heritage Area but not in a pasture. <strong>Impact > origin.</strong></p>
-            <p><strong>Types in Tasmania:</strong> Declared weeds (legally enforceable control), environmental weeds (threaten native ecosystems), agricultural weeds (reduce pasture/crop productivity).</p>
-        </div>
+        <h2><i class="fas fa-seedling"></i> Weed ecology · Cause → Effect → Response</h2>
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('eco1')" aria-expanded="false" aria-controls="eco1">
-                🌿 <strong>Cause:</strong> Roadside disturbance (grading, slashing, vehicle traffic) in Tasmanian Midlands.
+                🌿 <strong>Cause:</strong> Roadside disturbance (grading, slashing, vehicle traffic).
                 <strong>Predict:</strong> What happens to weed populations over 3 years?
             </button>
             <div id="eco1" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "Slashing controls weeds."</div>
-                <strong>Effect:</strong> Weed seedbank activates. Gorse, broom (Montpelier and English), thistles colonise bare ground.
-                Native regeneration suppressed. In Tasmania, this often leads to dense gorse thickets that impact grazing land and biodiversity.
+                <strong>Effect:</strong> Weed seedbank activates. Gorse, broom, thistles colonise bare ground.
+                Native regeneration suppressed.<br>
                 <strong>Response:</strong> Prioritise weed control BEFORE disturbance. After disturbance,
-                rapid revegetation with competitive natives (e.g., Kangaroo Grass, Poa species) is essential.
-                <div class="consequence-card">💸 <strong>Real cost in Tasmania:</strong> A single year of neglect after disturbance can create a $50,000+ control problem over 5 years, particularly on Midlands grazing properties.</div>
+                rapid revegetation with competitive natives is essential.
+                <div class="consequence-card">💸 <strong>Real cost:</strong> A single year of neglect after disturbance can create a $50,000+ control problem over 5 years.</div>
             </div>
             <div class="confidence-rating">
                 <span>How confident were you in your prediction?</span>
@@ -838,16 +831,16 @@
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('eco2')" aria-expanded="false" aria-controls="eco2">
-                🔥 <strong>Cause:</strong> High-intensity fire through gorse-infested bushland in Tasmania (e.g., Huon Valley or East Coast).
+                🔥 <strong>Cause:</strong> High-intensity fire through gorse-infested bushland.
                 <strong>Predict:</strong> What does the site look like 12 months post-fire?
             </button>
             <div id="eco2" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "Fire killed the gorse, problem solved."</div>
                 <strong>Effect:</strong> Gorse resprouts vigorously from root crowns. Seedbank stimulated.
-                Often denser than pre-fire. In Tasmanian conditions, this can create fire-prone monocultures that increase wildfire risk.
-                <strong>Response:</strong> Fire alone is not effective control and will usually increase gorse recruitment without follow-up treatment. Must follow with herbicide (e.g., fluroxypyr or triclopyr) within 6–12 months post-fire.
+                Often denser than pre-fire.<br>
+                <strong>Response:</strong> Fire alone is not effective control and will usually increase gorse recruitment without follow-up treatment. Must follow with herbicide within 6–12 months.
 Never burn without a follow-up plan.
-                <div class="consequence-card">🔥 <strong>Reality check:</strong> You just turned a manageable infestation into a denser, harder-to-treat problem. Follow-up cost triples. Tasmanian example: 2021 gorse fires near Bothwell resulted in 3x denser regrowth.</div>
+                <div class="consequence-card">🔥 <strong>Reality check:</strong> You just turned a manageable infestation into a denser, harder-to-treat problem. Follow-up cost triples.</div>
                 <span class="media-link" onclick="showTab(null, 'media'); document.getElementById('video1').scrollIntoView();">
                     <i class="fas fa-video"></i> Watch video example of post-fire regrowth
                 </span>
@@ -863,8 +856,8 @@ Never burn without a follow-up plan.
 
         <div class="field-signal">
             <i class="fas fa-eye"></i>
-            <strong>Field signal (Tasmanian context):</strong> Even-aged weed seedlings across a large area = recent disturbance
-            (fire, grading, flood, wallaby overgrazing). This is your window for prevention. In Tasmania, watch for post-flood ragwort emergence along rivers like the Derwent or Huon.
+            <strong>Field signal:</strong> Even-aged weed seedlings across a large area = recent disturbance
+            (fire, grading, flood). This is your window for prevention.
         </div>
 
         <!-- Pattern recognition pause -->
@@ -876,17 +869,17 @@ Never burn without a follow-up plan.
 
     <!-- ========== FAILURES TAB ========== -->
     <div id="failures" class="tab-pane">
-        <h2><i class="fas fa-exclamation-triangle"></i> Failure cases · Predict before you read (Tasmanian Examples)</h2>
+        <h2><i class="fas fa-exclamation-triangle"></i> Failure cases · Predict before you read</h2>
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('fail1')" aria-expanded="false" aria-controls="fail1">
-                ❄️ <strong>Situation:</strong> Contractor applies glyphosate to gorse in July in Tasmania's Central Highlands (dormant, frosty mornings).
+                ❄️ <strong>Situation:</strong> Contractor applies glyphosate to gorse in July (dormant, frosty mornings).
                 <strong>Predict:</strong> What happens by October?
             </button>
             <div id="fail1" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "Chemical works regardless of season."</div>
-                <strong>Outcome:</strong> Often poor control (<20–50%) under cold, frosty conditions. Gorse may be less affected because the plant isn't actively growing, so systemic herbicide translocation is reduced. Tasmanian autumn (March-May) or spring (September-November) are optimal windows.<br>
-                <strong>Correct:</strong> Delay until active growth. Use cut stump or basal bark in winter if control is urgent.
+                <strong>Outcome:</strong> Often poor control (<20–50%) under cold, frosty conditions. Gorse may be less affected because the plant isn't actively growing, so systemic herbicide translocation is reduced.<br>
+                <strong>Correct:</strong> Delay until active growth (autumn or spring).
                 <div class="consequence-card">💸 <strong>Real cost:</strong> $5,000 in chemical + labour = $1,000 worth of control. Plus resistance selection pressure.</div>
             </div>
             <div class="confidence-rating">
@@ -900,7 +893,7 @@ Never burn without a follow-up plan.
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('fail2')" aria-expanded="false" aria-controls="fail2">
-                🌾 <strong>Situation:</strong> Tasmanian landowner slashes 5ha of serrated tussock (Nassella trichotoma) in December on the Central Plateau (seed heads present).
+                🌾 <strong>Situation:</strong> Landowner slashes 5ha of serrated tussock in December (seed heads present).
                 <strong>Predict:</strong> What happens over next 2 years?
                 <span class="media-link" onclick="showTab(null, 'media');">
                     <i class="fas fa-image"></i> See photo of seed heads
@@ -908,9 +901,9 @@ Never burn without a follow-up plan.
             </button>
             <div id="fail2" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "Slashing removes the problem."</div>
-                <strong>Outcome:</strong> Infestation expands 3-5x. Slashing spreads thousands of viable seeds. Serrated tussock is a declared weed in Tasmania under the Biosecurity Act 2019, and landowners have a legal obligation to control it.<br>
-                <strong>Correct:</strong> Never slash after seed set. Spot spray with fluproponate or glyphosate BEFORE seed heads emerge (late winter/early spring).
-                <div class="consequence-card">💸 <strong>Real cost in Tasmania:</strong> You just turned a $2,000 spot-spray job into a $15,000+ ongoing control problem. The Tasmanian government can issue biosecurity directions for non-compliance.</div>
+                <strong>Outcome:</strong> Infestation expands 3-5x. Slashing spreads thousands of viable seeds.<br>
+                <strong>Correct:</strong> Never slash after seed set. Spot spray BEFORE seed heads emerge.
+                <div class="consequence-card">💸 <strong>Real cost:</strong> You just turned a $2,000 spot-spray job into a $15,000+ ongoing control problem.</div>
             </div>
             <div class="confidence-rating">
                 <span>How confident were you in your prediction?</span>
@@ -923,14 +916,14 @@ Never burn without a follow-up plan.
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('fail3')" aria-expanded="false" aria-controls="fail3">
-                🌧️ <strong>Situation:</strong> Heavy rain forecast in 2 hours on Tasmania's West Coast (high rainfall zone). Contractor sprays anyway.
+                🌧️ <strong>Situation:</strong> Heavy rain forecast in 2 hours. Contractor sprays anyway.
                 <strong>Predict:</strong> Efficacy?
             </button>
             <div id="fail3" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "Spray now before rain hits — something is better than nothing."</div>
-                <strong>Outcome:</strong> Most herbicides washed off. <10% effective. Tasmanian West Coast conditions (2500mm+ annual rainfall) make timing critical.<br>
-                <strong>Correct:</strong> Check rainfast window on the product label (typically 2–24 hours depending on formulation). Never spray if rain is expected within that window. Use organosilicone surfactants to improve rainfastness when conditions are marginal.
-                <div class="consequence-card">💸 <strong>Real cost:</strong> Chemical cost + labour = 100% waste. Plus chemical runoff into Tasmanian waterways (e.g., Franklin River catchment) = potential fines under the Water Management Act 1999.</div>
+                <strong>Outcome:</strong> Most herbicides washed off. <10% effective.<br>
+                <strong>Correct:</strong> Check rainfast window on the product label (typically 2–24 hours depending on formulation). Never spray if rain is expected within that window.
+                <div class="consequence-card">💸 <strong>Real cost:</strong> Chemical cost + labour = 100% waste. Plus chemical runoff into waterways = potential fines.</div>
             </div>
             <div class="confidence-rating">
                 <span>How confident were you in your prediction?</span>
@@ -950,32 +943,32 @@ Never burn without a follow-up plan.
 
     <!-- ========== SEEDBANK TAB ========== -->
     <div id="seedbank" class="tab-pane">
-        <h2><i class="fas fa-database"></i> Seedbank timeline · Why most Tasmanian weed programs fail</h2>
-        <p><strong>The single biggest misunderstanding:</strong> Visible weed removal ≠ success. The seedbank is the real enemy. In Tasmanian conditions, seedbanks persist for decades.</p>
+        <h2><i class="fas fa-database"></i> Seedbank timeline · Why most programs fail</h2>
+        <p><strong>The single biggest misunderstanding:</strong> Visible weed removal ≠ success. The seedbank is the real enemy.</p>
 
         <div class="seedbank-timeline">
-            <h4>Gorse seedbank decline after adult removal (Tasmanian conditions)</h4>
+            <h4>Gorse seedbank decline after adult removal</h4>
             <div class="timeline-bar">
                 <div class="timeline-year year-0" style="flex:0.5;">Year 0<br>Adults removed</div>
                 <div class="timeline-year year-1-3" style="flex:1.5;">Year 1-3<br>Massive germination flush</div>
                 <div class="timeline-year year-3-7" style="flex:2;">Year 3-7<br>Declining recruitment</div>
                 <div class="timeline-year year-10" style="flex:1;">Year 10+<br>Sporadic emergence</div>
             </div>
-            <p><strong>Critical insight for Tasmania:</strong> Gorse seed remains viable for <strong>30–40+ years</strong> in Tasmanian soils, particularly in cooler, moist environments like the Derwent Valley.
+            <p><strong>Critical insight:</strong> Gorse seed remains viable for <strong>30–40+ years</strong> depending on soil conditions.
             Most control programs stop at Year 1 or 2 – exactly when germination peaks.
             That's why reinfestation is guaranteed without 5-7 year follow-up.</p>
         </div>
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('seed1')" aria-expanded="false" aria-controls="seed1">
-                📊 <strong>Predict:</strong> After 90% visible kill of gorse in Tasmanian dry sclerophyll forest, how many viable seeds remain per square metre?
+                📊 <strong>Predict:</strong> After 90% visible kill of gorse, how many viable seeds remain per square metre?
             </button>
             <div id="seed1" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "90% kill = 90% seed reduction."</div>
                 <strong>Answer:</strong> Thousands. A single mature gorse bush can produce 5,000-10,000 seeds annually.
-                Seedbank remains largely intact. In Tasmanian conditions, up to 40% of seeds can remain viable after 20 years.<br>
-                <strong>Implication:</strong> Visible success is deceptive. Follow-up for years is mandatory. NRE Tas recommends 7-10 year programs for gorse.
-                <div class="consequence-card">⏰ <strong>Time horizon:</strong> Programs that stop at Year 2 fail. Real success is Year 7-10. Budget accordingly. Tasmanian case study: Five Mile Creek gorse control took 12 years of follow-up.</div>
+                Seedbank remains largely intact.<br>
+                <strong>Implication:</strong> Visible success is deceptive. Follow-up for years is mandatory.
+                <div class="consequence-card">⏰ <strong>Time horizon:</strong> Programs that stop at Year 2 fail. Real success is Year 7. Budget accordingly.</div>
             </div>
             <div class="confidence-rating">
                 <span>How confident were you in your prediction?</span>
@@ -989,39 +982,39 @@ Never burn without a follow-up plan.
 
     <!-- ========== FIELD SIGNALS TAB ========== -->
     <div id="signals" class="tab-pane">
-        <h2><i class="fas fa-eye"></i> Field signals · What you actually see in Tasmanian landscapes</h2>
-        <p>Theory is useless if you can't read the landscape. These are diagnostic signs relevant to Tasmanian conditions.</p>
+        <h2><i class="fas fa-eye"></i> Field signals · What you actually see</h2>
+        <p>Theory is useless if you can't read the landscape. These are diagnostic signs.</p>
 
         <div class="info-card">
             <i class="fas fa-tint"></i>
             <h4>Waxy leaf beading</h4>
-            <p>Water droplets forming spheres, rolling off leaf surface (common on gorse, broom, blackberry in Tasmanian spring).
+            <p>Water droplets forming spheres, rolling off leaf surface.
             <strong>Diagnosis:</strong> Poor spray uptake.
-            <strong>Response:</strong> Add surfactant/wetting agent. NRE Tas recommends organosilicone adjuvants for waxy species.</p>
+            <strong>Response:</strong> Add surfactant/wetting agent.</p>
         </div>
 
         <div class="info-card">
             <i class="fas fa-leaf"></i>
             <h4>Red/purple leaf stress</h4>
-            <p>Discoloration, often on margins (frequent in Tasmanian winter on capeweed, thistles).
-            <strong>Diagnosis:</strong> Drought or cold stress (Tasmania's frost hollows).
-            <strong>Response:</strong> Plant not actively transporting. Delay systemic herbicide until conditions improve.</p>
+            <p>Discoloration, often on margins.
+            <strong>Diagnosis:</strong> Drought or cold stress.
+            <strong>Response:</strong> Plant not actively transporting. Delay systemic herbicide.</p>
         </div>
 
         <div class="info-card">
             <i class="fas fa-layer-group"></i>
             <h4>Even-aged seedling cohort</h4>
-            <p>Large area of same-size seedlings (common post-flood along Tasmania's Meander River or post-fire in the Huon Valley).
-            <strong>Diagnosis:</strong> Recent disturbance (fire, grading, flood, wallaby overgrazing).
-            <strong>Response:</strong> Early intervention window – act now before seed set. This is your cheapest control moment.</p>
+            <p>Large area of same-size seedlings.
+            <strong>Diagnosis:</strong> Recent disturbance (fire, grading, flood).
+            <strong>Response:</strong> Early intervention window – act now before seed set.</p>
         </div>
 
         <div class="info-card">
             <i class="fas fa-border-all"></i>
             <h4>Patchy herbicide kill</h4>
             <p>Uneven death, clusters of survivors.
-            <strong>Diagnosis:</strong> Application issue (nozzle block, walking speed variation, boom height) OR early resistance. Resistance is emerging in Tasmanian annual ryegrass to glyphosate.
-            <strong>Response:</strong> Investigate equipment, consider rotating mode of action (MOA) groups. Report suspected resistance to NRE Tas.</p>
+            <strong>Diagnosis:</strong> Application issue (nozzle block, walking speed variation) OR early resistance.
+            <strong>Response:</strong> Investigate equipment, consider rotating MOA.</p>
         </div>
 
         <!-- Pattern recognition pause -->
@@ -1033,90 +1026,89 @@ Never burn without a follow-up plan.
 
     <!-- ========== METHOD HIERARCHY TAB ========== -->
     <div id="methods" class="tab-pane">
-        <h2><i class="fas fa-sitemap"></i> Method selection · A reusable thinking framework for Tasmania</h2>
-        <p>Stop memorising methods. Start with these <strong>five diagnostic questions</strong> under Tasmanian conditions:</p>
+        <h2><i class="fas fa-sitemap"></i> Method selection · A reusable thinking framework</h2>
+        <p>Stop memorising methods. Start with these <strong>five diagnostic questions</strong>:</p>
 
         <div class="info-card">
             <h4>1. Is seed present or about to be produced?</h4>
             <p>YES → STOP SPREAD FIRST. Containment, avoid slashing, bag seed heads.
-            <strong>Prevention is cheaper than control.</strong> Under Tasmanian law, it's an offence to spread declared weeds.</p>
+            <strong>Prevention is cheaper than control.</strong></p>
         </div>
         <div class="info-card">
             <h4>2. Is the plant actively growing?</h4>
-            <p>YES → systemic herbicides effective. NO (drought, frost, dormancy in Tasmanian winter) → delay or switch to mechanical (cut stump, basal bark).</p>
+            <p>YES → systemic herbicides effective. NO (drought, frost, dormancy) → delay or switch to mechanical (cut stump, basal bark).</p>
         </div>
         <div class="info-card">
             <h4>3. Is the site environmentally sensitive?</h4>
-            <p>Near Tasmanian waterways, Tasmanian Wilderness World Heritage Area, threatened species habitat, cultural site? → Non-chemical methods first. If chemical required, aquatic-registered only (check APVMA permits).</p>
+            <p>Near water, threatened species, cultural site? → Non-chemical methods first. If chemical required, aquatic-registered only.</p>
         </div>
         <div class="info-card">
             <h4>4. Is the infestation large or small?</h4>
-            <p>Small (<0.1ha) → hand pull, spot spray. Large → prioritise edges, containment zones. Don't treat everything at once. Work from high-value areas outward.</p>
+            <p>Small (<0.1ha) → hand pull, spot spray. Large → prioritise edges, containment zones. Don't treat everything at once.</p>
         </div>
         <div class="info-card">
             <h4>5. What is the follow-up plan?</h4>
-            <p>NO FOLLOW-UP PLAN = ACCEPT FAILURE. Schedule Year 2, 3, 5, 7 before you start. NRE Tas requires follow-up records for declared weed control programs.</p>
+            <p>NO FOLLOW-UP PLAN = ACCEPT FAILURE. Schedule Year 2, 3, 5, 7 before you start.</p>
         </div>
 
         <div class="prediction-card">
             <div class="constraint-badge">
-                <i class="fas fa-hourglass-half"></i> Real-world constraint: 3 hours before rain in Tasmania's wet West Coast, landholder insists
+                <i class="fas fa-hourglass-half"></i> Real-world constraint: 3 hours before rain, landholder insists
             </div>
             <button class="prediction-question" onclick="toggleAnswer('methodConstraint')" aria-expanded="false" aria-controls="methodConstraint">
-                ⛈️ <strong>Constraint scenario:</strong> You have 3 hours until rain, landholder pressures you to spray on their Tasmanian property.
+                ⛈️ <strong>Constraint scenario:</strong> You have 3 hours until rain, landholder pressures you to spray.
                 What do you do?
             </button>
             <div id="methodConstraint" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "Rush and spray anyway."</div>
-                <strong>Correct:</strong> Hold firm. Explain rainfast window (product label), offer to return after rain or switch to mechanical/cut stump (e.g., for blackberry or gorse).
-                Wasted spray = resistance selection + chemical waste + potential runoff into waterways.
-                <div class="consequence-card">💸 <strong>Real cost:</strong> Spraying before rain = 100% waste. Plus you've just selected for resistant survivors. In Tasmania, you could face fines under the Biosecurity Act 2019 for reckless chemical use.</div>
+                <strong>Correct:</strong> Hold firm. Explain rainfast window, offer to return after rain or switch to mechanical/cut stump.
+                Wasted spray = resistance selection.
+                <div class="consequence-card">💸 <strong>Real cost:</strong> Spraying before rain = 100% waste. Plus you've just selected for resistant survivors.</div>
             </div>
         </div>
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('method1')" aria-expanded="false" aria-controls="method1">
-                🔍 <strong>Apply the framework:</strong> Dense gorse, 2ha in Tasmania's Derwent Valley, site slopes to creek, mid-spring (active growth).
+                🔍 <strong>Apply the framework:</strong> Dense gorse, 2ha, site slopes to creek, mid-spring (active growth).
                 What method?
             </button>
             <div id="method1" class="prediction-answer">
-                <strong>Diagnosis:</strong> Actively growing → systemic works. Near water → no chemical within 20m buffer (check specific product label for aquatic buffer zone).
-                <strong>Solution:</strong> Follow label-specific buffer zones near waterways (often 5–100m depending on product). Use cut stump or non-chemical methods in restricted zones (within 20m of creek). Basal bark on upper slope where permitted. Follow-up at 12 months. Consult NRE Tas for current permit conditions.
+                <strong>Diagnosis:</strong> Actively growing → systemic works. Near water → no chemical within 20m buffer.
+                <strong>Solution:</strong> Follow label-specific buffer zones near waterways (often 5–100m depending on product). Use cut stump or non-chemical methods in restricted zones. Basal bark on upper slope where permitted. Follow-up at 12 months.
             </div>
         </div>
     </div>
 
     <!-- ========== WEED LIBRARY TAB ========== -->
     <div id="weedlib" class="tab-pane">
-        <h2><i class="fas fa-leaf"></i> Tasmanian Weed Library · Identification & Resources</h2>
-        <p><span class="weed-badge declared">Declared Weed (Tasmania)</span> = Legally required to control under Biosecurity Act 2019 · <span class="weed-badge environmental">Environmental Weed</span> = Threat to native Tasmanian ecosystems</p>
+        <h2><i class="fas fa-leaf"></i> Weed Library · Identification & Resources (Photos Coming)</h2>
+        <p><span class="weed-badge declared">Declared Weed</span> = Legally required to control · <span class="weed-badge environmental">Environmental Weed</span> = Threat to native ecosystems</p>
         <p><strong>For current control methods and herbicide recommendations, follow the NRE Tas links below each weed.</strong></p>
 
         <div class="weed-grid">
-            <!-- Declared Weeds in Tasmania -->
-            <div class="weed-card"><img src="weeds/gorse.jpg" alt="Gorse" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Gorse+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed (TAS)</span><h4>Gorse (Ulex europaeus)</h4><p><strong>Key ID:</strong> Dense spiny shrub, bright yellow flowers (winter-spring), seed pods explode when ripe. Major issue in Tasmanian Midlands and Derwent Valley.</p><p><strong>Habitat:</strong> Roadsides, pasture, bushland, coastal areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/gorse" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
-            <div class="weed-card"><img src="weeds/montpelier-broom.jpg" alt="Montpelier Broom" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Montpelier+Broom+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed (TAS)</span><h4>Montpelier Broom (Genista monspessulana)</h4><p><strong>Key ID:</strong> Soft green leaves, yellow pea-flowers (spring), flat seed pods with hairs. Widespread in southern Tasmania.</p><p><strong>Habitat:</strong> Roadsides, bushland, disturbed areas, coastal heath.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/montpelier-broom" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
-            <div class="weed-card"><img src="weeds/ragwort.jpg" alt="Ragwort" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Ragwort+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed (TAS)</span><h4>Ragwort (Jacobaea vulgaris)</h4><p><strong>Key ID:</strong> Yellow daisy flowers, deeply lobed leaves, toxic to livestock. Significant problem in Tasmanian pasture.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/ragwort" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
-            <div class="weed-card"><img src="weeds/pampas-grass.jpg" alt="Pampas Grass" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Pampas+Grass+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed (TAS)</span><h4>Pampas Grass (Cortaderia selloana)</h4><p><strong>Key ID:</strong> Large fluffy white/pink plumes (summer), sharp-edged leaves, grows 2-4m tall. Invades Tasmanian coastal areas and roadsides.</p><p><strong>Habitat:</strong> Roadsides, cliffs, logged areas, coastal dunes.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/pampas-grass" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
-            <div class="weed-card"><img src="weeds/boneseed.jpg" alt="Boneseed" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Boneseed+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed (TAS)</span><h4>Boneseed (Chrysanthemoides monilifera)</h4><p><strong>Key ID:</strong> Yellow daisy flowers (winter-spring), fleshy black berries, toothed leaves. Coastal weed in Tasmania (east coast to Bruny Island).</p><p><strong>Habitat:</strong> Coastal areas, roadsides, bushland.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/boneseed" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
-            <div class="weed-card"><img src="weeds/blackberry.jpg" alt="Blackberry" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Blackberry+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed (TAS)</span><h4>Blackberry (Rubus fruticosus agg.)</h4><p><strong>Key ID:</strong> Prickly arching canes, white/pink flowers, black berries (summer). Widespread across Tasmanian creeksides and roadsides.</p><p><strong>Habitat:</strong> Creeksides, roadsides, pasture, bushland edges.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/blackberry" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <!-- Declared Weeds -->
+            <div class="weed-card"><img src="weeds/gorse.jpg" alt="Gorse" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Gorse+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Gorse (Ulex europaeus)</h4><p><strong>Key ID:</strong> Dense spiny shrub, bright yellow flowers (winter-spring), seed pods explode when ripe.</p><p><strong>Habitat:</strong> Roadsides, pasture, bushland, coastal areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/gorse" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/montpelier-broom.jpg" alt="Montpelier Broom" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Montpelier+Broom+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Montpelier Broom (Genista monspessulana)</h4><p><strong>Key ID:</strong> Soft green leaves, yellow pea-flowers (spring), flat seed pods with hairs.</p><p><strong>Habitat:</strong> Roadsides, bushland, disturbed areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/montpelier-broom" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/ragwort.jpg" alt="Ragwort" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Ragwort+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Ragwort (Jacobaea vulgaris)</h4><p><strong>Key ID:</strong> Yellow daisy flowers, deeply lobed leaves, toxic to livestock.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/ragwort" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/pampas-grass.jpg" alt="Pampas Grass" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Pampas+Grass+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Pampas Grass (Cortaderia selloana)</h4><p><strong>Key ID:</strong> Large fluffy white/pink plumes (summer), sharp-edged leaves, grows 2-4m tall.</p><p><strong>Habitat:</strong> Roadsides, cliffs, logged areas, coastal.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/pampas-grass" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/boneseed.jpg" alt="Boneseed" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Boneseed+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Boneseed (Chrysanthemoides monilifera)</h4><p><strong>Key ID:</strong> Yellow daisy flowers (winter-spring), fleshy black berries, toothed leaves.</p><p><strong>Habitat:</strong> Coastal areas, roadsides, bushland.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/boneseed" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
+            <div class="weed-card"><img src="weeds/blackberry.jpg" alt="Blackberry" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Blackberry+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge declared">Declared Weed</span><h4>Blackberry (Rubus fruticosus agg.)</h4><p><strong>Key ID:</strong> Prickly arching canes, white/pink flowers, black berries (summer).</p><p><strong>Habitat:</strong> Creeksides, roadsides, pasture, bushland edges.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weeds-index/blackberry" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> NRE Tas control guide</a></div></div>
 
-            <!-- Environmental Weeds in Tasmania -->
-            <div class="weed-card"><img src="weeds/capeweed.jpg" alt="Capeweed" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Capeweed+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Capeweed (Arctotheca calendula)</h4><p><strong>Key ID:</strong> Yellow daisy flowers with dark centre, silver-grey lobed leaves, prostrate rosette. Common in Tasmanian pasture and roadsides.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://weeds.org.au/profiles/capeweed/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
-            <div class="weed-card"><img src="weeds/banana-passionfruit.jpg" alt="Banana Passionfruit" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Banana+Passionfruit+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Banana Passionfruit (Passiflora tripartita var. mollissima)</h4><p><strong>Key ID:</strong> Climbing vine, pink tubular flowers, yellow banana-shaped fruit, velvety leaves. Invades Tasmanian rainforest edges.</p><p><strong>Habitat:</strong> Rainforest edges, roadsides, gullies (Tasmanian southern forests).</p><a href="https://weeds.org.au/profiles/passiflora-mollissima/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
-            <div class="weed-card"><img src="weeds/spear-thistle.jpg" alt="Spear Thistle" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Spear+Thistle+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Spear Thistle (Cirsium vulgare)</h4><p><strong>Key ID:</strong> Purple flower heads, spiny winged stems, deeply lobed spiny leaves. Widespread in Tasmanian pasture and disturbed areas.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://weeds.org.au/profiles/spear-thistle/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
-            <div class="weed-card"><img src="weeds/cotoneaster.jpg" alt="Cotoneaster" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Cotoneaster+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Cotoneaster (Cotoneaster glaucophyllus)</h4><p><strong>Key ID:</strong> Evergreen shrub, small white/pink flowers, red berries, glossy leaves. Bird-dispersed weed in Tasmanian bushland.</p><p><strong>Habitat:</strong> Bushland, roadsides, rocky outcrops.</p><a href="https://weeds.org.au/profiles/cotoneaster/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
-            <div class="weed-card"><img src="weeds/mirror-bush.jpg" alt="Mirror Bush" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Mirror+Bush+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Mirror Bush (Coprosma repens)</h4><p><strong>Key ID:</strong> Shiny dark green leaves, orange-red berries, dense growth habit. Escaped garden plant in Tasmanian coastal areas.</p><p><strong>Habitat:</strong> Coastal areas, roadsides, bushland edges.</p><a href="https://weeds.org.au/profiles/coprosma-repens/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
-            <div class="weed-card"><img src="weeds/sweet-pittosporum.jpg" alt="Sweet Pittosporum" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Sweet+Pittosporum+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Sweet Pittosporum (Pittosporum undulatum)</h4><p><strong>Key ID:</strong> Dark green wavy leaves, cream flowers (spring), orange berries with sticky seeds. Native to eastern Australia but weedy in Tasmanian wet forests.</p><p><strong>Habitat:</strong> Wet forests, gullies, urban bushland in Tasmania.</p><a href="https://weeds.org.au/profiles/pittosporum-undulatum/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <!-- Environmental Weeds -->
+            <div class="weed-card"><img src="weeds/capeweed.jpg" alt="Capeweed" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Capeweed+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Capeweed (Arctotheca calendula)</h4><p><strong>Key ID:</strong> Yellow daisy flowers with dark centre, silver-grey lobed leaves, prostrate rosette.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://weeds.org.au/profiles/capeweed/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/banana-passionfruit.jpg" alt="Banana Passionfruit" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Banana+Passionfruit+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Banana Passionfruit (Passiflora tripartita var. mollissima)</h4><p><strong>Key ID:</strong> Climbing vine, pink tubular flowers, yellow banana-shaped fruit, velvety leaves.</p><p><strong>Habitat:</strong> Rainforest edges, roadsides, gullies.</p><a href="https://weeds.org.au/profiles/passiflora-mollissima/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/spear-thistle.jpg" alt="Spear Thistle" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Spear+Thistle+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Spear Thistle (Cirsium vulgare)</h4><p><strong>Key ID:</strong> Purple flower heads, spiny winged stems, deeply lobed spiny leaves.</p><p><strong>Habitat:</strong> Pasture, roadsides, disturbed areas.</p><a href="https://weeds.org.au/profiles/spear-thistle/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/cotoneaster.jpg" alt="Cotoneaster" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Cotoneaster+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Cotoneaster (Cotoneaster glaucophyllus)</h4><p><strong>Key ID:</strong> Evergreen shrub, small white/pink flowers, red berries, glossy leaves.</p><p><strong>Habitat:</strong> Bushland, roadsides, rocky outcrops.</p><a href="https://weeds.org.au/profiles/cotoneaster/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/mirror-bush.jpg" alt="Mirror Bush" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Mirror+Bush+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Mirror Bush (Coprosma repens)</h4><p><strong>Key ID:</strong> Shiny dark green leaves, orange-red berries, dense growth habit.</p><p><strong>Habitat:</strong> Coastal areas, roadsides, bushland edges.</p><a href="https://weeds.org.au/profiles/coprosma-repens/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
+            <div class="weed-card"><img src="weeds/sweet-pittosporum.jpg" alt="Sweet Pittosporum" onerror="this.src='https://placehold.co/400x300/e9ecef/495057?text=Sweet+Pittosporum+-+Add+photo'"><div class="weed-card-content"><span class="weed-badge environmental">Environmental Weed</span><h4>Sweet Pittosporum (Pittosporum undulatum)</h4><p><strong>Key ID:</strong> Dark green wavy leaves, cream flowers (spring), orange berries with sticky seeds.</p><p><strong>Habitat:</strong> Wet forests, gullies, urban bushland.</p><a href="https://weeds.org.au/profiles/pittosporum-undulatum/" target="_blank" class="weed-link"><i class="fas fa-external-link-alt"></i> Weeds Australia profile</a></div></div>
         </div>
-
-        <div class="disclaimer"><i class="fas fa-info-circle"></i> <strong>Photo placeholder notice:</strong> Add your own photos to the <code>weeds/</code> folder with matching filenames (e.g., <code>gorse.jpg</code>). Current control recommendations change — always check NRE Tas website for up-to-date Tasmanian advice.</div>
+        <div class="disclaimer"><i class="fas fa-info-circle"></i> <strong>Photo placeholder notice:</strong> Add your own photos to the <code>weeds/</code> folder with matching filenames (e.g., <code>gorse.jpg</code>). Current control recommendations change — always check NRE Tas website for up-to-date advice.</div>
     </div>
 
-    <!-- ========== SEASONAL CALENDAR TAB (Tasmanian seasons) ========== -->
+    <!-- ========== SEASONAL CALENDAR TAB ========== -->
     <div id="calendar" class="tab-pane">
-        <h2><i class="fas fa-calendar-alt"></i> Tasmanian Seasonal Treatment Calendar</h2>
-        <p>Use this as a quick reference for Tasmanian conditions. <strong>Always verify current control windows with NRE Tas guidelines.</strong></p>
+        <h2><i class="fas fa-calendar-alt"></i> Seasonal Treatment Calendar</h2>
+        <p>Use this as a quick reference. <strong>Always verify current control windows with NRE Tas guidelines.</strong></p>
         <div class="seasonal-calendar">
             <table class="calendar-table">
                 <thead>
@@ -1124,38 +1116,38 @@ Never burn without a follow-up plan.
                 </thead>
                 <tbody>
                     <tr><td><strong>Gorse</strong></td><td class="season-summer">⚠️ Avoid flowering</td><td class="season-autumn">✅ Best cut stump</td><td class="season-winter">❌ Frost avoid</td><td class="season-spring">✅ Cut stump</td></tr>
-                    <tr><td><strong>Montpelier Broom</strong></td><td class="season-summer">⚠️ Seed set</td><td class="season-autumn">✅ Spray seedlings</td><td class="season-winter">⚠️ Hand pull (mild areas)</td><td class="season-spring">✅ Spring flush</td></tr>
+                    <tr><td><strong>Montpelier Broom</strong></td><td class="season-summer">⚠️ Seed set</td><td class="season-autumn">✅ Spray seedlings</td><td class="season-winter">⚠️ Hand pull</td><td class="season-spring">✅ Spring flush</td></tr>
                     <tr><td><strong>Ragwort</strong></td><td class="season-summer">⚠️ Flowering</td><td class="season-autumn">✅ Treat rosettes</td><td class="season-winter">✅ Treat rosettes</td><td class="season-spring">⚠️ Bolting</td></tr>
                     <tr><td><strong>Pampas Grass</strong></td><td class="season-summer">⚠️ Plumes visible</td><td class="season-autumn">✅ Cut & paint</td><td class="season-winter">✅ Cut & paint</td><td class="season-spring">⚠️ Growth starts</td></tr>
                     <tr><td><strong>Boneseed</strong></td><td class="season-summer">⚠️ Berry spread</td><td class="season-autumn">✅ Spray seedlings</td><td class="season-winter">✅ Manual removal</td><td class="season-spring">⚠️ Flowering</td></tr>
                     <tr><td><strong>Blackberry</strong></td><td class="season-summer">⚠️ Fruiting</td><td class="season-autumn">✅ Best spray</td><td class="season-winter">✅ Dormant stem</td><td class="season-spring">⚠️ Flowering</td></tr>
                     <tr><td><strong>Spear Thistle</strong></td><td class="season-summer">⚠️ Seed set</td><td class="season-autumn">✅ Treat rosettes</td><td class="season-winter">✅ Treat rosettes</td><td class="season-spring">⚠️ Bolting</td></tr>
-                    <tr><td colspan="5"><small>✅ Best window (Tasmanian conditions) · ⚠️ Caution (avoid seed spread) · ❌ Avoid (low efficacy due to frost/dormancy)</small></td></tr>
+                    <tr><td colspan="5"><small>✅ Best window · ⚠️ Caution (avoid seed spread) · ❌ Avoid (low efficacy)</small></td></tr>
                 </tbody>
-            <table>
+            </table>
         </div>
-        <div class="field-signal"><i class="fas fa-info-circle"></i> <strong>Field reminder:</strong> Before any treatment in Tasmania, check NRE Tas website for current permit conditions, herbicide registrations, and declared weed requirements under the Biosecurity Act 2019.</div>
+        <div class="field-signal"><i class="fas fa-info-circle"></i> <strong>Field reminder:</strong> Before any treatment, check NRE Tas website for current permit conditions and herbicide registrations.</div>
     </div>
 
-    <!-- ========== SAFETY & LEGAL TAB (Tasmanian legislation) ========== -->
-    <div id="safety" class="tab-pane">
-        <h2><i class="fas fa-shield-alt"></i> Tasmanian Safety & Legal Guidelines</h2>
-        <p>These links direct you to official Tasmanian Government guidelines. <strong>You are legally required to follow these under the Biosecurity Act 2019 (Tasmania).</strong></p>
+<!-- ========== SAFETY & LEGAL TAB ========== -->
+<div id="safety" class="tab-pane">
+    <h2><i class="fas fa-shield-alt"></i> Safety & Legal Guidelines</h2>
+    <p>These links direct you to official Tasmanian Government guidelines. <strong>You are legally required to follow these.</strong></p>
 
-        <div class="ref-links">
-            <div class="ref-card"><i class="fas fa-tractor"></i><h4>Ground Spraying Guidelines (TAS)</h4><p>Calibration, nozzle selection, drift management, record keeping for Tasmanian conditions.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weed-control/ground-spraying" target="_blank">nre.tas.gov.au →</a></div>
-            <div class="ref-card"><i class="fas fa-water"></i><h4>Herbicide Use Near Waterways (TAS)</h4><p>Buffer zones, aquatic-registered chemicals, erosion control in Tasmanian catchments.</p><a href="https://nre.tas.gov.au/water/waterways/chemical-use-near-water" target="_blank">nre.tas.gov.au →</a></div>
-            <div class="ref-card"><i class="fas fa-car"></i><h4>Vehicle Wash-Down Guidelines (TAS)</h4><p>Clean-down procedures to prevent weed spread between Tasmanian sites. Legal requirement under Biosecurity Act.</p><a href="https://nre.tas.gov.au/biosecurity/vehicle-wash-down" target="_blank">nre.tas.gov.au →</a></div>
-        </div>
-
-        <h3><i class="fas fa-gavel"></i> Legal Responsibilities in Tasmania</h3>
-        <div class="info-card"><i class="fas fa-file-signature"></i><h4>Biosecurity Act 2019 (Tasmania)</h4>
-        <p>Declared weeds <strong>must</strong> be controlled on your land. It is an offence to propagate, spread, or sell declared weeds. The Tasmanian government can issue biosecurity directions, compliance notices, and penalties for non-compliance. Environmental weeds are not always declared under legislation, but may still require control under land management responsibilities, local council by-laws, or conservation agreements.</p></div>
-        
-        <div class="info-card"><i class="fas fa-clipboard-list"></i><h4>Record Keeping (Tasmanian Requirements)</h4><p>For commercial operators: Keep records of herbicide usage (product, rate, date, location, weather conditions, permit numbers) for at least 3 years. Required for chemical user permits and under the Agricultural and Veterinary Chemicals Code (Tasmania) Regulations.</p></div>
-
-        <div class="trap-card"><i class="fas fa-skull"></i> <strong>Critical for Tasmania:</strong> Never spray herbicides near waterways without checking the label's aquatic buffer zone. Some chemicals cannot be used within 20m-100m of water in Tasmania. Civil penalties apply under the Water Management Act 1999 and Biosecurity Act 2019.</div>
+    <div class="ref-links">
+        <div class="ref-card"><i class="fas fa-tractor"></i><h4>Ground Spraying Guidelines</h4><p>Calibration, nozzle selection, drift management, record keeping.</p><a href="https://nre.tas.gov.au/agriculture/weeds/weed-control/ground-spraying" target="_blank">nre.tas.gov.au →</a></div>
+        <div class="ref-card"><i class="fas fa-water"></i><h4>Herbicide Use Near Waterways</h4><p>Buffer zones, aquatic-registered chemicals, erosion control.</p><a href="https://nre.tas.gov.au/water/waterways/chemical-use-near-water" target="_blank">nre.tas.gov.au →</a></div>
+        <div class="ref-card"><i class="fas fa-car"></i><h4>Vehicle Wash-Down Guidelines</h4><p>Clean-down procedures to prevent weed spread between sites.</p><a href="https://nre.tas.gov.au/biosecurity/vehicle-wash-down" target="_blank">nre.tas.gov.au →</a></div>
     </div>
+
+    <h3><i class="fas fa-gavel"></i> Legal Responsibilities</h3>
+    <div class="info-card"><i class="fas fa-file-signature"></i><h4>Biosecurity Act 2019 (Tasmania)</h4>
+    <p>Declared weeds <strong>must</strong> be controlled on your land. It is an offence to propagate, spread, or sell declared weeds. Environmental weeds are not always declared under legislation, but may still require control under land management responsibilities, local regulations, or conservation agreements.</p></div>
+    
+    <div class="info-card"><i class="fas fa-clipboard-list"></i><h4>Record Keeping</h4><p>For commercial operators: Keep records of herbicide usage (product, rate, date, location, weather conditions) for at least 3 years. Required for chemical user permits.</p></div>
+
+    <div class="trap-card"><i class="fas fa-skull"></i> <strong>Critical:</strong> Never spray herbicides near waterways without checking the label's aquatic buffer zone. Some chemicals cannot be used within 20m-100m of water. Civil penalties apply.</div>
+</div>
 
     <!-- ========== SELF-CHECK QUIZ TAB ========== -->
     <div id="quiz" class="tab-pane">
@@ -1167,221 +1159,221 @@ Never burn without a follow-up plan.
         <button class="btn-reveal" onclick="resetQuiz()" style="margin-top: 1rem;"><i class="fas fa-redo-alt"></i> Reset Quiz</button>
     </div>
 
-    <!-- ========== REFERENCES TAB (Tasmanian resources) ========== -->
+    <!-- ========== REFERENCES TAB ========== -->
     <div id="references" class="tab-pane">
-        <h2><i class="fas fa-book"></i> Tasmanian Reference Links · Key Resources</h2>
-        <p>Bookmark these Tasmanian websites for current weed information and control guidelines.</p>
+        <h2><i class="fas fa-book"></i> Reference Links · Key Resources</h2>
+        <p>Bookmark these websites for current weed information and control guidelines.</p>
 
         <div class="ref-links">
-            <div class="ref-card"><i class="fas fa-tree"></i><h4>NRE Tas · Weeds Index</h4><p>Tasmanian Government weed information, declared weed lists, control guides, and Biosecurity Act requirements.</p><a href="https://nre.tas.gov.au/invasive-species/weeds/weeds-index" target="_blank">nre.tas.gov.au/weeds →</a></div>
-            <div class="ref-card"><i class="fas fa-globe"></i><h4>Weeds Australia (Tasmania)</h4><p>National weed profiles with Tasmania-specific distribution and control notes.</p><a href="https://weeds.org.au/" target="_blank">weeds.org.au →</a></div>
-            <div class="ref-card"><i class="fas fa-search"></i><h4>Weeds Australia Profiles</h4><p>Detailed species profiles with photos and control options relevant to Tasmania.</p><a href="https://weeds.org.au/weeds-profiles/" target="_blank">weeds.org.au/profiles →</a></div>
-            <div class="ref-card"><i class="fas fa-flask"></i><h4>APVMA · Permits</h4><p>Check herbicide permits and registered uses for Tasmanian conditions.</p><a href="https://apvma.gov.au" target="_blank">apvma.gov.au →</a></div>
+            <div class="ref-card"><i class="fas fa-tree"></i><h4>NRE Tas · Weeds</h4><p>Tasmanian Government weed information, declared weed lists, control guides.</p><a href="https://nre.tas.gov.au/invasive-species/weeds/weeds-index" target="_blank">nre.tas.gov.au/weeds →</a></div>
+            <div class="ref-card"><i class="fas fa-globe"></i><h4>Weeds Australia</h4><p>National weed profiles, identification tools, best practice guides.</p><a href="https://weeds.org.au/" target="_blank">weeds.org.au →</a></div>
+            <div class="ref-card"><i class="fas fa-search"></i><h4>Weeds.org.au Profiles</h4><p>Detailed species profiles with photos and control options.</p><a href="https://weeds.org.au/weeds-profiles/" target="_blank">weeds.org.au/profiles →</a></div>
+        <!--    <div class="ref-card"><i class="fas fa-map"></i><h4>NRE Tas · Weed Maps</h4><p>Distribution maps for declared weeds in Tasmania.</p><a href="https://dpipwe.tas.gov.au/invasive-species/weeds" target="_blank">dpipwe.tas.gov.au →</a></div> -->
+            <div class="ref-card"><i class="fas fa-flask"></i><h4>APVMA · Permits</h4><p>Check herbicide permits and registered uses.</p><a href="https://apvma.gov.au" target="_blank">apvma.gov.au →</a></div>
         </div>
 
-        <div class="disclaimer"><i class="fas fa-calendar-alt"></i> <strong>Remember:</strong> Control guidelines and herbicide registrations change regularly. Always check the NRE Tas website <strong>before</strong> starting any weed control program in Tasmania.</div>
+        <div class="disclaimer"><i class="fas fa-calendar-alt"></i> <strong>Remember:</strong> Control guidelines and herbicide registrations change regularly. Always check the NRE Tas website <strong>before</strong> starting any weed control program.</div>
     </div>
 
     <!-- ========== RESISTANCE TAB ========== -->
     <div id="resistance" class="tab-pane">
-        <h2><i class="fas fa-shield-virus"></i> Herbicide resistance · Real and growing in Tasmania</h2>
-        <p>Resistance is not a future problem. It is happening now in Tasmania. Glyphosate-resistant annual ryegrass exists in Tasmanian cropping systems.
-        The same risk applies to woody weeds (gorse, broom, blackberry) if practices don't change.</p>
+        <h2><i class="fas fa-shield-virus"></i> Herbicide resistance · Real and growing</h2>
+        <p>Resistance is not a future problem. It is happening now. Glyphosate-resistant annual ryegrass exists in Tasmania.
+        The same risk applies to woody weeds if practices don't change.</p>
 
         <div class="prediction-card">
             <button class="prediction-question" onclick="toggleAnswer('resist1')" aria-expanded="false" aria-controls="resist1">
-                💊 <strong>Predict:</strong> What happens when a Tasmanian contractor uses half-rate glyphosate over large areas for 3 consecutive years on gorse?
+                💊 <strong>Predict:</strong> What happens when a contractor uses half-rate glyphosate over large areas for 3 consecutive years?
             </button>
             <div id="resist1" class="prediction-answer">
                 <div class="common-mistake">⚠️ Common instinct: "Half rate saves money, still controls most."</div>
-                <strong>Outcome:</strong> Sub-lethal dosing selects resistant individuals. Within 5 years, population no longer controlled. Glyphosate-resistant gorse has been documented in New Zealand and is likely to emerge in Tasmania.<br>
-                <strong>Correct:</strong> Always use label rates. Rotate mode of action (MOA) groups (e.g., Group 1, Group 4, Group 9). Never spray the same herbicide on the same population year after year.
-                <div class="consequence-card">🧬 <strong>Evolution in action:</strong> You're not just wasting chemical — you're breeding superweeds for the next generation of Tasmanian land managers. Once resistance evolves, it's permanent.</div>
+                <strong>Outcome:</strong> Sub-lethal dosing selects resistant individuals. Within 5 years, population no longer controlled.<br>
+                <strong>Correct:</strong> Always use label rates. Rotate mode of action (MOA) groups.
+                Never spray the same herbicide on the same population year after year.
+                <div class="consequence-card">🧬 <strong>Evolution in action:</strong> You're not just wasting chemical — you're breeding superweeds for the next generation of land managers.</div>
             </div>
         </div>
 
         <div class="field-signal">
             <i class="fas fa-flask"></i>
-            <strong>Early resistance signals in Tasmania:</strong> Patches within infestation that survive treatment while surrounding plants die.
-            Same equipment, same mix, same day. That is not "missed spots" — that is resistance developing. Report suspected resistance to NRE Tas.
+            <strong>Early resistance signals:</strong> Patches within infestation that survive treatment while surrounding plants die.
+            Same equipment, same mix, same day. That is not "missed spots" — that is resistance developing.
         </div>
     </div>
 
     <!-- ========== WHAT NOT TO DO TAB ========== -->
     <div id="dont" class="tab-pane">
-        <h2><i class="fas fa-ban"></i> What NOT to do · The failure checklist (Tasmanian edition)</h2>
-        <p>Memorise this. Print it. Put it in your vehicle. These are common errors in Tasmanian weed management.</p>
+        <h2><i class="fas fa-ban"></i> What NOT to do · The failure checklist</h2>
+        <p>Memorise this. Print it. Put it in your vehicle.</p>
 
         <ul class="dont-list">
-            <li>✗ Slash serrated tussock after seed set (expands infestation 3-5x)</li>
-            <li>✗ Spray systemic herbicides during Tasmanian drought or frost (wastes chemical)</li>
-            <li>✗ Assume one treatment = success (seedbank persists for decades)</li>
-            <li>✗ Ignore clean-down between Tasmanian sites (spreads seeds via mud/soil)</li>
-            <li>✗ Treat without positive weed identification (misidentification wastes time)</li>
-            <li>✗ Cut and leave willow branches in Tasmanian waterways (they root and regrow)</li>
-            <li>✗ Use higher herbicide rate than label "for safety" (increases resistance selection pressure)</li>
-            <li>✗ Work alone in remote Tasmanian areas without PLB/EPIRB (safety risk)</li>
-            <li>✗ Spray outside label conditions (commonly >15 km/h wind, gusty conditions, or during temperature inversion — common in Tasmanian valleys)</li>
-            <li>✗ Burn gorse without 12-month follow-up herbicide (fire alone increases density)</li>
-            <li>✗ Ignore Biosecurity Act 2019 requirements for declared weeds (legal penalties apply)</li>
-            <li>✗ Spread declared weeds in firewood, gravel, or soil (offence under legislation)</li>
+            <li>✗ Slash serrated tussock after seed set</li>
+            <li>✗ Spray systemic herbicides during drought or frost</li>
+            <li>✗ Assume one treatment = success</li>
+            <li>✗ Ignore clean-down between sites</li>
+            <li>✗ Treat without positive weed identification</li>
+            <li>✗ Cut and leave willow branches in waterways</li>
+            <li>✗ Use higher herbicide rate than label "for safety" (increases resistance selection)</li>
+            <li>✗ Work alone in remote areas without PLB/EPIRB</li>
+            <li>✗ Spray outside label conditions (commonly >15 km/h wind, gusty conditions, or during temperature inversion)</li>
+            <li>✗ Burn gorse without 12-month follow-up herbicide</li>
         </ul>
 
         <div class="trap-card">
             <i class="fas fa-skull"></i>
-            <strong>The worst failure in Tasmania:</strong> Walking away after one treatment, believing the job is done.
-            Seedbank + regrowth = reinfestation within 2-3 years. Tasmanian example: Gorse programs in the Derwent Valley that stopped at Year 2 had 80% reinfestation by Year 5.
+            <strong>The worst failure:</strong> Walking away after one treatment, believing the job is done.
+            Seedbank + regrowth = reinfestation within 2-3 years.
         </div>
     </div>
 
     <!-- ========== CONFIDENCE TRAPS TAB ========== -->
     <div id="traps" class="tab-pane">
-        <h2><i class="fas fa-trap"></i> Confidence traps · Where experienced Tasmanian operators fail</h2>
+        <h2><i class="fas fa-trap"></i> Confidence traps · Where experienced operators fail</h2>
         <p>These are not beginner mistakes. These are the errors that catch skilled people because they look like success.</p>
 
         <div class="trap-card">
-            <h4><i class="fas fa-seedling"></i> Trap 1: "Looks dead" ≠ dead (Tasmanian winter dormancy)</h4>
-            <p>Gorse can look brown and dead above ground while root crowns are viable. Tasmanian winters can make plants look dead when they're just dormant. Wait 6 months (through one growing season) before declaring success. Resprouts are common.</p>
+            <h4><i class="fas fa-seedling"></i> Trap 1: "Looks dead" ≠ dead</h4>
+            <p>Gorse can look brown and dead above ground while root crowns are viable. Wait 6 months before declaring success. Resprouts are common.</p>
         </div>
         <div class="trap-card">
             <h4><i class="fas fa-vial"></i> Trap 2: "More chemical = better"</h4>
-            <p>Exceeding label rates does not improve kill. It wastes chemical, increases environmental risk in Tasmanian catchments, and accelerates resistance selection. Label rates are tested for efficacy.</p>
+            <p>Exceeding label rates does not improve kill. It wastes chemical, increases environmental risk, and accelerates resistance selection.</p>
         </div>
         <div class="trap-card">
             <h4><i class="fas fa-check-circle"></i> Trap 3: "Clean site = success"</h4>
-            <p>No visible weeds does not mean no seedbank. The real infestation is underground. Tasmanian control programs fail when they declare victory at Year 1 or 2 instead of Year 7-10. Soil seedbank testing is available through Tasmanian agricultural labs.</p>
+            <p>No visible weeds does not mean no seedbank. The real infestation is underground. Control programs fail when they declare victory at Year 1 instead of Year 7.</p>
         </div>
         <div class="trap-card">
             <h4><i class="fas fa-chart-line"></i> Trap 4: "Past success predicts future"</h4>
-            <p>What worked last season may fail this season. Weather, plant phenology (affected by Tasmanian climate variability), and resistance change. Always assess current conditions before applying — don't assume what worked last year will work this year.</p>
+            <p>What worked last season may fail this season. Weather, plant phenology, and resistance change. Always assess current conditions before applying.</p>
         </div>
     </div>
 
     <!-- ========== INDIGENOUS TAB ========== -->
     <div id="indigenous" class="tab-pane">
         <h2><i class="fas fa-hands-helping"></i> Indigenous land management · Observation-based learning</h2>
-        <p>Acknowledging Tasmanian Aboriginal land management practices and their relevance to modern weed management.</p>
 
         <div class="info-card">
             <i class="fas fa-fire"></i>
             <h4>Cultural burning vs uniform disturbance</h4>
-            <p>Western fire management often treats entire blocks uniformly. Tasmanian Aboriginal mosaic burning (palawa/pakana practice) creates patchworks of different ages and burn intensities.</p>
+            <p>Western fire management often treats entire blocks uniformly. Indigenous mosaic burning creates patchworks of different ages and burn intensities.</p>
             <button class="prediction-question" onclick="toggleAnswer('indig1')" aria-expanded="false" aria-controls="indig1">
-                🔥 <strong>Predict:</strong> You're planning a burn across a uniform gorse block in Tasmania. What happens under a mosaic burn instead?
+                🔥 <strong>Predict:</strong> You're planning a burn across a uniform gorse block. What happens under a mosaic burn instead?
             </button>
             <div id="indig1" class="prediction-answer">
                 <strong>Outcome:</strong> Patchy heat creates refuges for native insects and plants,
                 breaks weed seedbank continuity, reduces massive post-fire germination.
-                <strong>Lesson:</strong> Consider patch-burn strategies. Consult with Tasmanian Aboriginal land management organisations before designing fire-based weed programs.
+                <strong>Lesson:</strong> Consider patch-burn strategies.
             </div>
         </div>
 
         <div class="info-card">
             <i class="fas fa-calendar-alt"></i>
             <h4>Reading the land, not the calendar</h4>
-            <p>Instead of fixed dates ("spray in October"), read seasonal indicators: flowering events, insect activity, soil moisture. Tasmanian seasons are variable — adapt to conditions, not dates.</p>
+            <p>Instead of fixed dates ("spray in October"), Indigenous approaches read seasonal indicators: flowering events, insect activity, soil moisture.</p>
             <button class="prediction-question" onclick="toggleAnswer('indig2')" aria-expanded="false" aria-controls="indig2">
                 🌼 <strong>Predict:</strong> Instead of 'spray in October', you use wattle flowering as your trigger. What risk does this reduce?
             </button>
             <div id="indig2" class="prediction-answer">
-                <strong>Answer:</strong> Reduces risk of spraying during wrong phenological stage (dormancy, drought stress, frost). Improves herbicide efficacy by timing with active plant growth.
+                <strong>Answer:</strong> Reduces risk of spraying during wrong phenological stage (dormancy, drought stress). Improves herbicide efficacy.
             </div>
         </div>
 
         <div class="info-card">
             <i class="fas fa-tree"></i>
             <h4>Deepening: Decision-making without written rules</h4>
-            <p>Tasmanian Aboriginal land management traditionally operates without written manuals — knowledge is transmitted through observation, oral tradition, and multi-generational feedback loops.</p>
+            <p>Indigenous land management often operates without written manuals — knowledge is transmitted through observation, oral tradition, and multi-generational feedback loops.</p>
             <button class="prediction-question" onclick="toggleAnswer('indig3')" aria-expanded="false" aria-controls="indig3">
                 🌏 <strong>Reflect:</strong> How does this apply to your own field judgement development?
             </button>
             <div id="indig3" class="prediction-answer">
-                <strong>Lesson:</strong> Your field notes, mistakes, and observations become tomorrow's tacit knowledge. Write down what you see in Tasmanian conditions. Share what you learn with colleagues.
-                <div class="field-signal" style="margin-top: 0.5rem;"><i class="fas fa-pen"></i> Action: Start a Tasmanian weed field journal today.</div>
+                <strong>Lesson:</strong> Your field notes, mistakes, and observations become tomorrow's tacit knowledge. Write down what you see. Share what you learn.
+                <div class="field-signal" style="margin-top: 0.5rem;"><i class="fas fa-pen"></i> Action: Start a field journal today.</div>
             </div>
         </div>
 
         <div class="field-signal">
             <i class="fas fa-tree"></i>
-            <strong>Field signal in Tasmania:</strong> Patches of different-aged vegetation = possible cultural burn history.
-            Ask local Tasmanian Aboriginal organisations before designing weed program. Respect cultural heritage when planning weed control activities.
+            <strong>Field signal:</strong> Patches of different-aged vegetation = possible cultural burn history.
+            Ask local Traditional Owners before designing weed program.
         </div>
     </div>
 
     <!-- ========== MICRO-SCENARIOS TAB ========== -->
     <div id="micro" class="tab-pane">
-        <h2><i class="fas fa-comment-dots"></i> Micro-scenarios · 1-2 line decisions (Tasmanian context)</h2>
+        <h2><i class="fas fa-comment-dots"></i> Micro-scenarios · 1-2 line decisions</h2>
 
         <div class="micro-scenario">
-            <p><strong>🌿 You see gorse resprouting 6 months after treatment in Tasmania's Derwent Valley. What likely went wrong?</strong></p>
+            <p><strong>🌿 You see gorse resprouting 6 months after treatment. What likely went wrong?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro1')">Reveal</button>
             <div id="micro1" style="display:none; margin-top:0.5rem;">
                 <div class="common-mistake">⚠️ Common instinct: "Product failed."</div>
-                Low herbicide uptake (drought-stressed plant from Tasmanian summer) OR missed stems. Resprouting is normal – need follow-up treatment within 6-12 months.
-                <div class="consequence-card">⏰ Follow-up window: 6-12 months. Miss it and you're back to square one. Tasmanian gorse requires 5-7 year programs.</div>
+                Low herbicide uptake (drought-stressed plant) OR missed stems. Resprouting is normal – need follow-up treatment.
+                <div class="consequence-card">⏰ Follow-up window: 6-12 months. Miss it and you're back to square one.</div>
             </div>
         </div>
 
         <div class="micro-scenario">
-            <p><strong>💧 Customer wants you to spray willows along a Tasmanian stream (Huon River tributary). Chemical buffer is 20m. What do you do?</strong></p>
+            <p><strong>💧 Customer wants you to spray willows along a stream. Chemical buffer is 20m. What do you do?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro2')">Reveal</button>
             <div id="micro2" style="display:none; margin-top:0.5rem;">
-                Cut stump mechanical removal within 20m. No chemical near water. Explain to customer why – legality under Water Management Act and ecology.
-                <div class="consequence-card">⚖️ Legal risk in Tasmania: Fines for chemical in waterways can exceed $10,000 under the Water Management Act 1999.</div>
+                Cut stump mechanical removal within 20m. No chemical near water. Explain to customer why – legality and ecology.
+                <div class="consequence-card">⚖️ Legal risk: Fines for chemical in waterways can exceed $10,000.</div>
             </div>
         </div>
 
         <div class="micro-scenario">
-            <p><strong>📉 Your spray results on blackberry are patchy. Some areas 100% kill, others 30%. Same mix, same day, Tasmanian Midlands property. What's likely happening?</strong></p>
+            <p><strong>📉 Your spray results are patchy. Some areas 100% kill, others 30%. Same mix, same day. What's likely happening?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro3')">Reveal</button>
             <div id="micro3" style="display:none; margin-top:0.5rem;">
-                Equipment issue (nozzle block, pressure variation, boom height) OR early resistance. Check calibration first. If consistent pattern, consider MOA rotation. Report suspected resistance to NRE Tas.
+                Equipment issue (nozzle block, pressure variation) OR early resistance. Check calibration first. If consistent pattern, consider MOA rotation.
             </div>
         </div>
 
         <div class="micro-scenario">
-            <p><strong>🔥 Fire has just swept through a gorse-infested valley in Tasmania's Huon Valley. Landholder says "good, that's sorted." What do you say?</strong></p>
+            <p><strong>🔥 Fire has just swept through a gorse-infested valley. Landholder says "good, that's sorted." What do you say?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro4')">Reveal</button>
             <div id="micro4" style="display:none; margin-top:0.5rem;">
-                Fire stimulates gorse germination and resprouting in Tasmania (stored seedbank + root crowns). Will be worse within 12 months without follow-up herbicide. Plan follow-up now.
-                <div class="consequence-card">🔥 Fire alone = 10% control in Tasmania. Fire + follow-up = 90% control. Don't leave the job half done. Tasmanian example: 2021 Bothwell fires resulted in 3x denser gorse.</div>
+                Fire stimulates gorse germination and resprouting. Will be worse within 12 months without follow-up herbicide. Plan now.
+                <div class="consequence-card">🔥 Fire alone = 10% control. Fire + follow-up = 90% control. Don't leave the job half done.</div>
             </div>
         </div>
 
         <div class="micro-scenario">
-            <p><strong>🚜 You find a threatened orchid patch (e.g., <em>Caladenia</em> species) underneath a gorse thicket you're treating in Tasmania. What's your immediate action?</strong></p>
+            <p><strong>🚜 You find a threatened orchid patch underneath a gorse thicket you're treating. What's your immediate action?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro5')">Reveal</button>
             <div id="micro5" style="display:none; margin-top:0.5rem;">
-                STOP. Flag location. Do NOT spray nearby. Hand-remove gorse around orchids. Report to land manager and NRE Tas (Threatened Species Section). Legal protection under Threatened Species Protection Act 1995 overrides production.
+                STOP. Flag location. Do NOT spray. Hand-remove gorse around orchids. Report to land manager and NRE Tas.
+                Legal protection overrides production.
             </div>
         </div>
 
         <div class="micro-scenario">
-            <div class="constraint-badge"><i class="fas fa-clock"></i> Real-world: Private property access only 1 day/year in Tasmania's Central Highlands</div>
-            <p><strong>🚧 You have ONE access day per year to a remote Tasmanian property. What method do you choose?</strong></p>
+            <div class="constraint-badge"><i class="fas fa-clock"></i> Real-world: Private property access only 1 day/year</div>
+            <p><strong>🚧 You have ONE access day per year to a remote property. What method do you choose?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro6')">Reveal</button>
             <div id="micro6" style="display:none; margin-top:0.5rem;">
-                Target persistent methods: basal bark or cut-stump with residual herbicide (e.g., triclopyr+picloram).
-                Plan for follow-up by landholder using spot-spray in between – train them. Use long-term markers (GPS/photos) to track progress.
+                Target persistent methods: basal bark or cut-stump with residual herbicide.
+                Plan for follow-up by landholder using spot-spray in between – train them.
             </div>
         </div>
 
         <div class="micro-scenario">
-            <div class="constraint-badge"><i class="fas fa-leaf"></i> Pampas Grass (Declared Weed in Tasmania)</div>
-            <p><strong>🌾 You find pampas grass flowering in Tasmania's Douglas-Apsley National Park. What's your priority?</strong></p>
+            <div class="constraint-badge"><i class="fas fa-leaf"></i> Pampas Grass</div>
+            <p><strong>🌾 You find pampas grass flowering in a national park. What's your priority?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro7')">Reveal</button>
             <div id="micro7" style="display:none; margin-top:0.5rem;">
-                Remove flower heads FIRST (bag and remove from site, ideally incinerate), then treat the plant. Prevents seed spread into the national park.
-                <div class="consequence-card">💨 A single pampas plume can release 100,000+ seeds. Remove it before disturbing the plant. Under Tasmanian law, you cannot spread declared weeds.</div>
+                Remove flower heads FIRST (bag and remove from site), then treat the plant. Prevents seed spread.
+                <div class="consequence-card">💨 A single pampas plume can release 100,000+ seeds. Remove it before disturbing the plant.</div>
             </div>
         </div>
 
         <div class="micro-scenario">
-            <div class="constraint-badge"><i class="fas fa-leaf"></i> Boneseed (Declared Weed in Tasmania)</div>
-            <p><strong>🍇 Boneseed with ripe berries along Tasmania's east coast (Freycinet area). What's the risk?</strong></p>
+            <div class="constraint-badge"><i class="fas fa-leaf"></i> Boneseed</div>
+            <p><strong>🍇 Boneseed with ripe berries along a coastal cliff. What's the risk?</strong></p>
             <button class="btn-reveal" onclick="revealMicro('micro8')">Reveal</button>
             <div id="micro8" style="display:none; margin-top:0.5rem;">
-                Birds (including native species) eat berries and spread seeds widely through coastal reserves. Remove plants BEFORE berry set ideally. If already fruiting, bag and dispose of berries off-site in red bin (not compost).
+                Birds eat berries and spread seeds widely. Remove plants BEFORE berry set ideally. If already fruiting, bag and dispose of berries off-site.
             </div>
         </div>
 
@@ -1392,65 +1384,63 @@ Never burn without a follow-up plan.
         </div>
     </div>
 
-    <!-- ========== MEDIA TAB ========== -->
-    <div id="media" class="tab-pane">
-        <h2><i class="fas fa-photo-video"></i> Video & Photo Examples for Tasmanian Conditions</h2>
-        <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
+<!-- ========== MEDIA TAB ========== -->
+<div id="media" class="tab-pane">
+    <h2><i class="fas fa-photo-video"></i> Video & Photo Examples</h2>
+    <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
 
-        <h3><i class="fas fa-video"></i> Key Video Resources</h3>
+    <h3><i class="fas fa-video"></i> Key Video Resources</h3>
 
-        <!-- VIDEO 1 -->
-        <div class="prediction-card">
-            <button class="prediction-question" onclick="toggleAnswer('videoPred1')" aria-expanded="false" aria-controls="videoPred1">
-                🎬 <strong>Before watching Video 1:</strong> If you had a Tasmanian property with weeds (gorse, broom, blackberry), how would you decide where to control first—and where not to disturb?
-            </button>
-            <div id="videoPred1" class="prediction-answer">
-                After watching, compare: the video explains integrated weed management based on ecological resilience.
-                Key idea: prioritise areas of moderate resilience, protect high-quality areas (e.g., Tasmanian remnant grassland), and plan long-term for degraded sites rather than treating everything the same.
-            </div>
+    <!-- VIDEO 1 -->
+    <div class="prediction-card">
+        <button class="prediction-question" onclick="toggleAnswer('videoPred1')" aria-expanded="false" aria-controls="videoPred1">
+            🎬 <strong>Before watching Video 1:</strong> If you had a property with weeds, how would you decide where to control first—and where not to disturb?
+        </button>
+        <div id="videoPred1" class="prediction-answer">
+            After watching, compare: the video explains integrated weed management based on ecological resilience.
+            Key idea: prioritise areas of moderate resilience, protect high-quality areas, and plan long-term for degraded sites rather than treating everything the same.
         </div>
-
-        <div class="media-container">
-            <div class="video-wrapper" id="video1">
-                <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Integrated weed management and resilience" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p><strong>Video 1:</strong> Explains integrated weed management using ecological resilience. Focus on how site condition (high, moderate, poor resilience) determines control strategy, and why not all areas should be treated the same.</p>
-        </div>
-
-        <!-- VIDEO 2 -->
-        <div class="prediction-card">
-            <button class="prediction-question" onclick="toggleAnswer('videoPred2')" aria-expanded="false" aria-controls="videoPred2">
-                🎬 <strong>Before watching Video 2:</strong> Should all non-native plants be removed from a Tasmanian natural area? Why or why not?
-            </button>
-            <div id="videoPred2" class="prediction-answer">
-                After watching, compare: the video challenges this assumption.
-                Key ideas: environmental weeds are defined by impact (not origin), disturbance drives weed invasion, and some weeds are symptoms (passengers) rather than causes (drivers).
-                Removing plants without understanding the system can cause harm. Relevant to Tasmanian landscapes where disturbance history matters.
-            </div>
-        </div>
-
-        <div class="media-container">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Environmental weeds and ecological principles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p><strong>Video 2:</strong> Introduces ecological principles behind weed management. Focus on disturbance, opportunistic vs competitive species, and the difference between driver and passenger weeds.</p>
-        </div>
-
-        <h3><i class="fas fa-camera"></i> Tasmanian Field Photo Gallery</h3>
-        <p><strong>In development:</strong> Add your own Tasmanian weed photos to the <code>weeds/</code> folder with these filenames:<br>
-        gorse.jpg, montpelier-broom.jpg, ragwort.jpg, pampas-grass.jpg, boneseed.jpg, blackberry.jpg,<br>
-        capeweed.jpg, banana-passionfruit.jpg, spear-thistle.jpg, cotoneaster.jpg, mirror-bush.jpg, sweet-pittosporum.jpg</p>
-        <div class="disclaimer"><i class="fas fa-info-circle"></i> Photos help with identification. Include images showing: whole plant, leaves, flowers, seeds, and infestation scale in Tasmanian landscapes.</div>
     </div>
+
+    <div class="media-container">
+        <div class="video-wrapper" id="video1">
+            <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Integrated weed management and resilience" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p><strong>Video 1:</strong> Explains integrated weed management using ecological resilience. Focus on how site condition (high, moderate, poor resilience) determines control strategy, and why not all areas should be treated the same.</p>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="prediction-card">
+        <button class="prediction-question" onclick="toggleAnswer('videoPred2')" aria-expanded="false" aria-controls="videoPred2">
+            🎬 <strong>Before watching Video 2:</strong> Should all non-native plants be removed from a natural area? Why or why not?
+        </button>
+        <div id="videoPred2" class="prediction-answer">
+            After watching, compare: the video challenges this assumption.
+            Key ideas: environmental weeds are defined by impact (not origin), disturbance drives weed invasion, and some weeds are symptoms (passengers) rather than causes (drivers).
+            Removing plants without understanding the system can cause harm.
+        </div>
+    </div>
+
+    <div class="media-container">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Environmental weeds and ecological principles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p><strong>Video 2:</strong> Introduces ecological principles behind weed management. Focus on disturbance, opportunistic vs competitive species, and the difference between driver and passenger weeds.</p>
+    </div>
+
+    <h3><i class="fas fa-camera"></i> Field Photo Gallery</h3>
+    <p><strong>In Development <!-- Add your photos to the <code>weeds/</code> folder with these filenames:</strong><br>
+    gorse.jpg, montpelier-broom.jpg, ragwort.jpg, pampas-grass.jpg, boneseed.jpg, blackberry.jpg,<br>
+    capeweed.jpg, banana-passionfruit.jpg, spear-thistle.jpg, cotoneaster.jpg, mirror-bush.jpg, sweet-pittosporum.jpg</p> -->
+</div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
-        <span>© AHCPMG301 · Prediction-First Learning · Tasmanian Edition</span>
+        <span>© AHCPMG301 · Prediction-First Learning</span>
         <span>Remember: Learning happens in the gap between prediction and reality</span>
-        <span>Field judgement > content knowledge | Biosecurity Act 2019 (TAS)</span>
+        <span>Field judgement > content knowledge</span>
     </footer>
 </div>
-
 <script>
     // ========== DEBOUNCE UTILITY ==========
     let debounceTimer;
@@ -1512,15 +1502,15 @@ Never burn without a follow-up plan.
                     let style = '';
                     switch(confidence) {
                         case 'low':
-                            message = 'Good instinct to question yourself. Review this concept — this is where learning happens in Tasmanian conditions.';
+                            message = 'Good instinct to question yourself. Review this concept — this is where learning happens.';
                             style = 'background: #fef1f0; border-left: 4px solid var(--confidence-low);';
                             break;
                         case 'medium':
-                            message = 'You\'re on the right track. The gap between your prediction and reality is where Tasmanian field judgement grows.';
+                            message = 'You\'re on the right track. The gap between your prediction and reality is where field judgement grows.';
                             style = 'background: #fff8e7; border-left: 4px solid var(--confidence-medium);';
                             break;
                         case 'high':
-                            message = 'Strong confidence! If you were correct, excellent. If not, this is your most valuable learning moment for Tasmania.';
+                            message = 'Strong confidence! If you were correct, excellent. If not, this is your most valuable learning moment.';
                             style = 'background: #e8f8e8; border-left: 4px solid var(--confidence-high);';
                             break;
                     }
@@ -1544,7 +1534,7 @@ Never burn without a follow-up plan.
                 const wrapper = iframe.parentElement;
                 const offlineMsg = document.createElement('div');
                 offlineMsg.className = 'offline-video-message';
-                offlineMsg.innerHTML = '<i class="fas fa-wifi"></i> Video requires internet connection. Download this page before heading into the field in Tasmania.';
+                offlineMsg.innerHTML = '<i class="fas fa-wifi"></i> Video requires internet connection. Download this page before heading into the field.';
                 iframe.style.display = 'none';
                 wrapper.appendChild(offlineMsg);
             });
@@ -1557,13 +1547,12 @@ Never burn without a follow-up plan.
 
     // ========== QUIZ SYSTEM ==========
     const quizQuestions = [
-        { q: "After 90% visible kill of gorse in Tasmania, how many viable seeds remain per square metre?", options: ["Almost none", "Hundreds", "Thousands", "All of them"], correct: 2, explanation: "A single gorse bush produces 5,000-10,000 seeds annually. In Tasmanian conditions, seeds remain viable for 30-40+ years." },
-        { q: "You find pampas grass flowering in a Tasmanian national park. What's your first action?", options: ["Spray immediately", "Cut and leave", "Remove flower heads first", "Burn the area"], correct: 2, explanation: "Remove flower heads FIRST and bag them to prevent seed spread. Under Tasmanian law, you cannot spread declared weeds." },
-        { q: "What is the minimum rainfast window for most systemic herbicides in Tasmanian conditions?", options: ["30 minutes", "2-6 hours", "24 hours", "1 week"], correct: 1, explanation: "Most systemic herbicides need 2-6 hours without rain. Check product label. Tasmanian West Coast conditions make this critical." },
-        { q: "What does patchy herbicide kill likely indicate in a Tasmanian blackberry infestation?", options: ["Different weed species", "Equipment issue or early resistance", "Weather variation", "Normal outcome"], correct: 1, explanation: "Check calibration first. Consider resistance testing. Report suspected resistance to NRE Tas." },
-        { q: "When is BEST time to spray gorse with systemic herbicide in Tasmania?", options: ["Winter (dormant/frost)", "During flowering", "Active growth (autumn/spring)", "During summer drought"], correct: 2, explanation: "Systemic herbicides need actively growing plants. Tasmanian autumn (March-May) and spring (September-November) are optimal." },
-        { q: "What is the single biggest misunderstanding in Tasmanian weed control?", options: ["Herbicide choice", "Spray timing", "Visible removal = success", "Weather conditions"], correct: 2, explanation: "Visible weed removal doesn't mean the seedbank is gone. Tasmanian programs fail when they stop at Year 2 instead of Year 7-10." },
-        { q: "Under the Biosecurity Act 2019 (Tasmania), what is your legal obligation for declared weeds on your land?", options: ["No obligation", "Must control them", "Only control if they spread", "Report only"], correct: 1, explanation: "Declared weeds MUST be controlled on your land under Tasmanian law. It is an offence to propagate, spread, or sell declared weeds." }
+        { q: "After 90% visible kill of gorse, how many viable seeds remain per square metre?", options: ["Almost none", "Hundreds", "Thousands", "All of them"], correct: 2, explanation: "A single gorse bush produces 5,000-10,000 seeds annually." },
+        { q: "You find pampas grass flowering in a national park. What's your first action?", options: ["Spray immediately", "Cut and leave", "Remove flower heads first", "Burn the area"], correct: 2, explanation: "Remove flower heads FIRST and bag them to prevent seed spread." },
+        { q: "What is the minimum rainfast window for most systemic herbicides?", options: ["30 minutes", "2-6 hours", "24 hours", "1 week"], correct: 1, explanation: "Most systemic herbicides need 2-6 hours without rain." },
+        { q: "What does patchy herbicide kill likely indicate?", options: ["Different weed species", "Equipment issue or early resistance", "Weather variation", "Normal outcome"], correct: 1, explanation: "Check calibration first. Consider resistance testing." },
+        { q: "When is BEST time to spray gorse with systemic herbicide?", options: ["Winter (dormant)", "During flowering", "Active growth (autumn/spring)", "During frost"], correct: 2, explanation: "Systemic herbicides need actively growing plants." },
+        { q: "What is the single biggest misunderstanding in weed control?", options: ["Herbicide choice", "Spray timing", "Visible removal = success", "Weather conditions"], correct: 2, explanation: "Visible weed removal doesn't mean the seedbank is gone." }
     ];
 
     let quizAnswers = new Array(quizQuestions.length).fill(null);
@@ -1646,17 +1635,20 @@ Never burn without a follow-up plan.
         renderQuiz();
     }
 
-    // ========== TAB PERSISTENCE FROM URL PARAMETERS ==========
+    // ========== PART 6: TAB PERSISTENCE FROM URL PARAMETERS (ADD THIS) ==========
     function handleDeepLinks() {
         const urlParams = new URLSearchParams(window.location.search);
         const tabParam = urlParams.get('tab');
         if (tabParam && document.getElementById(tabParam)) {
+            // Remove active class from all panes and buttons
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            // Show the requested tab
             document.getElementById(tabParam).classList.add('active');
             const activeButton = document.querySelector(`.tab-btn[data-tab="${tabParam}"]`);
             if (activeButton) activeButton.classList.add('active');
         } else {
+            // Load last active tab from localStorage
             const lastTab = localStorage.getItem('activeTab');
             if (lastTab && document.getElementById(lastTab)) {
                 document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
@@ -1668,12 +1660,12 @@ Never burn without a follow-up plan.
         }
     }
 
-    // ========== OFFLINE WARNING ==========
+    // ========== OFFLINE WARNING (ADD THIS) ==========
     function addOfflineWarning() {
         window.addEventListener('offline', () => {
             const warning = document.createElement('div');
             warning.style.cssText = 'position:fixed; bottom:0; left:0; right:0; background:#c7452b; color:white; text-align:center; padding:0.5rem; z-index:1000; font-size:0.8rem;';
-            warning.innerHTML = '⚠️ You are offline. Some features (videos, external links) may not work. Download content before heading into remote Tasmanian areas.';
+            warning.innerHTML = '⚠️ You are offline. Some features (videos, external links) may not work.';
             document.body.appendChild(warning);
             setTimeout(() => warning.style.display = 'none', 5000);
         });
@@ -1684,7 +1676,7 @@ Never burn without a follow-up plan.
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js').then(reg => {
-                    console.log('Service Worker registered for Tasmania PWA:', reg);
+                    console.log('Service Worker registered:', reg);
                 }).catch(err => {
                     console.log('Service Worker registration failed:', err);
                 });
@@ -1697,10 +1689,26 @@ Never burn without a follow-up plan.
         initConfidenceButtons();
         checkOnlineStatus();
         loadQuizFromLocalStorage();
-        handleDeepLinks();
-        addOfflineWarning();
+        handleDeepLinks();      // PART 6: Handles ?tab=weedlib from PWA shortcuts
+        addOfflineWarning();    // PART 5: Adds offline warning banner
         registerServiceWorker();
     });
+</script>
+                        
+<script>
+    // ========== MANIFEST.JSON FOR PWA ==========
+    // Create this file as manifest.json in the same folder
+    /*
+    {
+        "name": "AHCPMG301 Weed Control Training",
+        "short_name": "Weed Training",
+        "start_url": ".",
+        "display": "standalone",
+        "theme_color": "#1a4a35",
+        "background_color": "#deecda",
+        "icons": []
+    }
+    */
 </script>
 
 </body>
