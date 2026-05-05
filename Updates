@@ -1069,6 +1069,13 @@ Never burn without a follow-up plan.
                 Wasted spray = resistance selection + chemical waste + potential runoff into waterways.
                 <div class="consequence-card">💸 <strong>Real cost:</strong> Spraying before rain = 100% waste. Plus you've just selected for resistant survivors. In Tasmania, you could face fines under the Biosecurity Act 2019 for reckless chemical use.</div>
             </div>
+            <div class="confidence-rating">
+                <span>How confident were you in your prediction?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="methodConstraint">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="methodConstraint">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="methodConstraint">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-methodConstraint"></div>
+            </div>
         </div>
 
         <div class="prediction-card">
@@ -1079,6 +1086,13 @@ Never burn without a follow-up plan.
             <div id="method1" class="prediction-answer">
                 <strong>Diagnosis:</strong> Actively growing → systemic works. Near water → no chemical within 20m buffer (check specific product label for aquatic buffer zone).
                 <strong>Solution:</strong> Follow label-specific buffer zones near waterways (often 5–100m depending on product). Use cut stump or non-chemical methods in restricted zones (within 20m of creek). Basal bark on upper slope where permitted. Follow-up at 12 months. Consult NRE Tas for current permit conditions.
+            </div>
+            <div class="confidence-rating">
+                <span>How confident were you in applying this framework?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="method1">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="method1">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="method1">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-method1"></div>
             </div>
         </div>
     </div>
@@ -1189,6 +1203,13 @@ Never burn without a follow-up plan.
                 <strong>Correct:</strong> Always use label rates. Rotate mode of action (MOA) groups (e.g., Group 1, Group 4, Group 9). Never spray the same herbicide on the same population year after year.
                 <div class="consequence-card">🧬 <strong>Evolution in action:</strong> You're not just wasting chemical — you're breeding superweeds for the next generation of Tasmanian land managers. Once resistance evolves, it's permanent.</div>
             </div>
+            <div class="confidence-rating">
+                <span>How confident were you in your prediction?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="resist1">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="resist1">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="resist1">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-resist1"></div>
+            </div>
         </div>
 
         <div class="field-signal">
@@ -1216,55 +1237,247 @@ Never burn without a follow-up plan.
             <li>✗ Ignore Biosecurity Act 2019 requirements for declared weeds (legal penalties apply)</li>
             <li>✗ Spread declared weeds in firewood, gravel, or soil (offence under legislation)</li>
         </ul>
-        <div class="trap-card"><i class="fas fa-skull"></i> <strong>The worst failure in Tasmania:</strong> Walking away after one treatment, believing the job is done. Seedbank + regrowth = reinfestation within 2-3 years.</div>
+        <div class="trap-card"><i class="fas fa-skull"></i> <strong>The worst failure in Tasmania:</strong> Walking away after one treatment, believing the job is done. Seedbank + regrowth = reinfestation within 2-3 years. Tasmanian example: Gorse programs in the Derwent Valley that stopped at Year 2 had 80% reinfestation by Year 5.</div>
     </div>
 
     <!-- ========== CONFIDENCE TRAPS TAB ========== -->
     <div id="traps" class="tab-pane">
         <h2><i class="fas fa-trap"></i> Confidence traps · Where experienced Tasmanian operators fail</h2>
         <p>These are not beginner mistakes. These are the errors that catch skilled people because they look like success.</p>
-        <div class="trap-card"><h4><i class="fas fa-seedling"></i> Trap 1: "Looks dead" ≠ dead (Tasmanian winter dormancy)</h4><p>Gorse can look brown and dead above ground while root crowns are viable. Wait 6 months before declaring success.</p></div>
-        <div class="trap-card"><h4><i class="fas fa-vial"></i> Trap 2: "More chemical = better"</h4><p>Exceeding label rates does not improve kill. It wastes chemical and accelerates resistance.</p></div>
-        <div class="trap-card"><h4><i class="fas fa-check-circle"></i> Trap 3: "Clean site = success"</h4><p>No visible weeds does not mean no seedbank. Programs fail when they declare victory at Year 1 instead of Year 7-10.</p></div>
-        <div class="trap-card"><h4><i class="fas fa-chart-line"></i> Trap 4: "Past success predicts future"</h4><p>What worked last season may fail this season. Always assess current conditions.</p></div>
+        
+        <div class="trap-card">
+            <h4><i class="fas fa-seedling"></i> Trap 1: "Looks dead" ≠ dead (Tasmanian winter dormancy)</h4>
+            <p>Gorse can look brown and dead above ground while root crowns are viable. Tasmanian winters can make plants look dead when they're just dormant. Wait 6 months (through one growing season) before declaring success. Resprouts are common.</p>
+        </div>
+        <div class="trap-card">
+            <h4><i class="fas fa-vial"></i> Trap 2: "More chemical = better"</h4>
+            <p>Exceeding label rates does not improve kill. It wastes chemical, increases environmental risk in Tasmanian catchments, and accelerates resistance selection. Label rates are tested for efficacy.</p>
+        </div>
+        <div class="trap-card">
+            <h4><i class="fas fa-check-circle"></i> Trap 3: "Clean site = success"</h4>
+            <p>No visible weeds does not mean no seedbank. The real infestation is underground. Tasmanian control programs fail when they declare victory at Year 1 or 2 instead of Year 7-10. Soil seedbank testing is available through Tasmanian agricultural labs.</p>
+        </div>
+        <div class="trap-card">
+            <h4><i class="fas fa-chart-line"></i> Trap 4: "Past success predicts future"</h4>
+            <p>What worked last season may fail this season. Weather, plant phenology (affected by Tasmanian climate variability), and resistance change. Always assess current conditions before applying — don't assume what worked last year will work this year.</p>
+        </div>
     </div>
 
     <!-- ========== INDIGENOUS TAB ========== -->
     <div id="indigenous" class="tab-pane">
         <h2><i class="fas fa-hands-helping"></i> Indigenous land management · Observation-based learning</h2>
         <p>Acknowledging Tasmanian Aboriginal land management practices and their relevance to modern weed management.</p>
-        <div class="info-card"><i class="fas fa-fire"></i><h4>Cultural burning vs uniform disturbance</h4><p>Western fire management often treats entire blocks uniformly. Tasmanian Aboriginal mosaic burning creates patchworks of different ages and burn intensities.</p>
-        <button class="prediction-question" onclick="toggleAnswer('indig1')">🔥 Predict: Mosaic burn instead of uniform block burn?</button>
-        <div id="indig1" class="prediction-answer"><strong>Outcome:</strong> Patchy heat creates refuges for native species, breaks weed seedbank continuity.</div></div>
-        <div class="info-card"><i class="fas fa-calendar-alt"></i><h4>Reading the land, not the calendar</h4><p>Instead of fixed dates, read seasonal indicators: flowering events, insect activity, soil moisture.</p>
-        <button class="prediction-question" onclick="toggleAnswer('indig2')">🌼 Predict: Using wattle flowering as spray trigger instead of calendar date?</button>
-        <div id="indig2" class="prediction-answer"><strong>Answer:</strong> Reduces risk of spraying during wrong phenological stage (dormancy, drought stress).</div></div>
-        <div class="field-signal"><i class="fas fa-tree"></i> <strong>Field signal:</strong> Patches of different-aged vegetation = possible cultural burn history. Ask local Tasmanian Aboriginal organisations before designing weed programs.</div>
+        
+        <div class="info-card">
+            <i class="fas fa-fire"></i>
+            <h4>Cultural burning vs uniform disturbance</h4>
+            <p>Western fire management often treats entire blocks uniformly. Tasmanian Aboriginal mosaic burning (palawa/pakana practice) creates patchworks of different ages and burn intensities.</p>
+            <button class="prediction-question" onclick="toggleAnswer('indig1')" aria-expanded="false" aria-controls="indig1">
+                🔥 <strong>Predict:</strong> You're planning a burn across a uniform gorse block in Tasmania. What happens under a mosaic burn instead?
+            </button>
+            <div id="indig1" class="prediction-answer">
+                <strong>Outcome:</strong> Patchy heat creates refuges for native insects and plants,
+                breaks weed seedbank continuity, reduces massive post-fire germination.
+                <strong>Lesson:</strong> Consider patch-burn strategies. Consult with Tasmanian Aboriginal land management organisations before designing fire-based weed programs.
+            </div>
+            <div class="confidence-rating">
+                <span>How confident were you in your prediction?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="indig1">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="indig1">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="indig1">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-indig1"></div>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h4>Reading the land, not the calendar</h4>
+            <p>Instead of fixed dates ("spray in October"), read seasonal indicators: flowering events, insect activity, soil moisture. Tasmanian seasons are variable — adapt to conditions, not dates.</p>
+            <button class="prediction-question" onclick="toggleAnswer('indig2')" aria-expanded="false" aria-controls="indig2">
+                🌼 <strong>Predict:</strong> Instead of 'spray in October', you use wattle flowering as your trigger. What risk does this reduce?
+            </button>
+            <div id="indig2" class="prediction-answer">
+                <strong>Answer:</strong> Reduces risk of spraying during wrong phenological stage (dormancy, drought stress, frost). Improves herbicide efficacy by timing with active plant growth.
+            </div>
+            <div class="confidence-rating">
+                <span>How confident were you in your prediction?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="indig2">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="indig2">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="indig2">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-indig2"></div>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-tree"></i>
+            <h4>Deepening: Decision-making without written rules</h4>
+            <p>Tasmanian Aboriginal land management traditionally operates without written manuals — knowledge is transmitted through observation, oral tradition, and multi-generational feedback loops.</p>
+            <button class="prediction-question" onclick="toggleAnswer('indig3')" aria-expanded="false" aria-controls="indig3">
+                🌏 <strong>Reflect:</strong> How does this apply to your own field judgement development?
+            </button>
+            <div id="indig3" class="prediction-answer">
+                <strong>Lesson:</strong> Your field notes, mistakes, and observations become tomorrow's tacit knowledge. Write down what you see in Tasmanian conditions. Share what you learn with colleagues.
+                <div class="field-signal" style="margin-top: 0.5rem;"><i class="fas fa-pen"></i> Action: Start a Tasmanian weed field journal today.</div>
+            </div>
+            <div class="confidence-rating">
+                <span>How confident are you in applying this reflection?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="indig3">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="indig3">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="indig3">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-indig3"></div>
+            </div>
+        </div>
+
+        <div class="field-signal">
+            <i class="fas fa-tree"></i>
+            <strong>Field signal in Tasmania:</strong> Patches of different-aged vegetation = possible cultural burn history.
+            Ask local Tasmanian Aboriginal organisations before designing weed program. Respect cultural heritage when planning weed control activities.
+        </div>
     </div>
 
     <!-- ========== MICRO-SCENARIOS TAB ========== -->
     <div id="micro" class="tab-pane">
         <h2><i class="fas fa-comment-dots"></i> Micro-scenarios · 1-2 line decisions (Tasmanian context)</h2>
-        <div class="micro-scenario"><p><strong>🌿 You see gorse resprouting 6 months after treatment in Tasmania's Derwent Valley. What likely went wrong?</strong></p><button class="btn-reveal" onclick="revealMicro('micro1')">Reveal</button><div id="micro1" style="display:none;"><div class="common-mistake">⚠️ Common instinct: "Product failed."</div>Low herbicide uptake OR missed stems. Resprouting is normal – need follow-up treatment within 6-12 months.</div></div>
-        <div class="micro-scenario"><p><strong>💧 Customer wants you to spray willows along a Tasmanian stream. Chemical buffer is 20m. What do you do?</strong></p><button class="btn-reveal" onclick="revealMicro('micro2')">Reveal</button><div id="micro2" style="display:none;">Cut stump mechanical removal within 20m. No chemical near water. Legal under Water Management Act.</div></div>
-        <div class="micro-scenario"><p><strong>📉 Your spray results on blackberry are patchy. Some areas 100% kill, others 30%. Same mix, same day. What's likely?</strong></p><button class="btn-reveal" onclick="revealMicro('micro3')">Reveal</button><div id="micro3" style="display:none;">Equipment issue OR early resistance. Check calibration first.</div></div>
-        <div class="micro-scenario"><p><strong>🔥 Fire has just swept through gorse-infested valley in Tasmania. Landholder says "good, that's sorted." What do you say?</strong></p><button class="btn-reveal" onclick="revealMicro('micro4')">Reveal</button><div id="micro4" style="display:none;">Fire stimulates gorse germination. Will be worse within 12 months without follow-up herbicide.</div></div>
-        <div class="micro-scenario"><p><strong>🚜 You find a threatened orchid patch underneath a gorse thicket you're treating. What's your immediate action?</strong></p><button class="btn-reveal" onclick="revealMicro('micro5')">Reveal</button><div id="micro5" style="display:none;">STOP. Flag location. Do NOT spray. Hand-remove gorse around orchids. Legal protection applies.</div></div>
-        <div class="micro-scenario"><div class="constraint-badge"><i class="fas fa-clock"></i> Real-world: Private property access only 1 day/year</div><p><strong>🚧 You have ONE access day per year to a remote Tasmanian property. What method do you choose?</strong></p><button class="btn-reveal" onclick="revealMicro('micro6')">Reveal</button><div id="micro6" style="display:none;">Target persistent methods: basal bark or cut-stump with residual herbicide. Train landholder for follow-up.</div></div>
-        <div class="pattern-pause"><i class="fas fa-chart-line"></i> <strong>Pause. What pattern are you noticing across these micro-scenarios?</strong><textarea placeholder="Your observation..." rows="2"></textarea></div>
+
+        <div class="micro-scenario">
+            <p><strong>🌿 You see gorse resprouting 6 months after treatment in Tasmania's Derwent Valley. What likely went wrong?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro1')">Reveal</button>
+            <div id="micro1" style="display:none; margin-top:0.5rem;">
+                <div class="common-mistake">⚠️ Common instinct: "Product failed."</div>
+                Low herbicide uptake (drought-stressed plant from Tasmanian summer) OR missed stems. Resprouting is normal – need follow-up treatment within 6-12 months.
+                <div class="consequence-card">⏰ Follow-up window: 6-12 months. Miss it and you're back to square one. Tasmanian gorse requires 5-7 year programs.</div>
+            </div>
+        </div>
+
+        <div class="micro-scenario">
+            <p><strong>💧 Customer wants you to spray willows along a Tasmanian stream (Huon River tributary). Chemical buffer is 20m. What do you do?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro2')">Reveal</button>
+            <div id="micro2" style="display:none; margin-top:0.5rem;">
+                Cut stump mechanical removal within 20m. No chemical near water. Explain to customer why – legality under Water Management Act and ecology.
+                <div class="consequence-card">⚖️ Legal risk in Tasmania: Fines for chemical in waterways can exceed $10,000 under the Water Management Act 1999.</div>
+            </div>
+        </div>
+
+        <div class="micro-scenario">
+            <p><strong>📉 Your spray results on blackberry are patchy. Some areas 100% kill, others 30%. Same mix, same day, Tasmanian Midlands property. What's likely happening?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro3')">Reveal</button>
+            <div id="micro3" style="display:none; margin-top:0.5rem;">
+                Equipment issue (nozzle block, pressure variation, boom height) OR early resistance. Check calibration first. If consistent pattern, consider MOA rotation. Report suspected resistance to NRE Tas.
+            </div>
+        </div>
+
+        <div class="micro-scenario">
+            <p><strong>🔥 Fire has just swept through a gorse-infested valley in Tasmania's Huon Valley. Landholder says "good, that's sorted." What do you say?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro4')">Reveal</button>
+            <div id="micro4" style="display:none; margin-top:0.5rem;">
+                Fire stimulates gorse germination and resprouting in Tasmania (stored seedbank + root crowns). Will be worse within 12 months without follow-up herbicide. Plan follow-up now.
+                <div class="consequence-card">🔥 Fire alone = 10% control in Tasmania. Fire + follow-up = 90% control. Don't leave the job half done. Tasmanian example: 2021 Bothwell fires resulted in 3x denser gorse.</div>
+            </div>
+        </div>
+
+        <div class="micro-scenario">
+            <p><strong>🚜 You find a threatened orchid patch (e.g., <em>Caladenia</em> species) underneath a gorse thicket you're treating in Tasmania. What's your immediate action?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro5')">Reveal</button>
+            <div id="micro5" style="display:none; margin-top:0.5rem;">
+                STOP. Flag location. Do NOT spray nearby. Hand-remove gorse around orchids. Report to land manager and NRE Tas (Threatened Species Section). Legal protection under Threatened Species Protection Act 1995 overrides production.
+            </div>
+        </div>
+
+        <div class="micro-scenario">
+            <div class="constraint-badge"><i class="fas fa-clock"></i> Real-world: Private property access only 1 day/year in Tasmania's Central Highlands</div>
+            <p><strong>🚧 You have ONE access day per year to a remote Tasmanian property. What method do you choose?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro6')">Reveal</button>
+            <div id="micro6" style="display:none; margin-top:0.5rem;">
+                Target persistent methods: basal bark or cut-stump with residual herbicide (e.g., triclopyr+picloram).
+                Plan for follow-up by landholder using spot-spray in between – train them. Use long-term markers (GPS/photos) to track progress.
+            </div>
+        </div>
+
+        <div class="micro-scenario">
+            <div class="constraint-badge"><i class="fas fa-leaf"></i> Pampas Grass (Declared Weed in Tasmania)</div>
+            <p><strong>🌾 You find pampas grass flowering in Tasmania's Douglas-Apsley National Park. What's your priority?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro7')">Reveal</button>
+            <div id="micro7" style="display:none; margin-top:0.5rem;">
+                Remove flower heads FIRST (bag and remove from site, ideally incinerate), then treat the plant. Prevents seed spread into the national park.
+                <div class="consequence-card">💨 A single pampas plume can release 100,000+ seeds. Remove it before disturbing the plant. Under Tasmanian law, you cannot spread declared weeds.</div>
+            </div>
+        </div>
+
+        <div class="micro-scenario">
+            <div class="constraint-badge"><i class="fas fa-leaf"></i> Boneseed (Declared Weed in Tasmania)</div>
+            <p><strong>🍇 Boneseed with ripe berries along Tasmania's east coast (Freycinet area). What's the risk?</strong></p>
+            <button class="btn-reveal" onclick="revealMicro('micro8')">Reveal</button>
+            <div id="micro8" style="display:none; margin-top:0.5rem;">
+                Birds (including native species) eat berries and spread seeds widely through coastal reserves. Remove plants BEFORE berry set ideally. If already fruiting, bag and dispose of berries off-site in red bin (not compost).
+            </div>
+        </div>
+
+        <div class="pattern-pause">
+            <i class="fas fa-chart-line"></i> <strong>Pause. What pattern are you noticing across these micro-scenarios?</strong>
+            <textarea placeholder="Your observation..." rows="2"></textarea>
+        </div>
     </div>
 
     <!-- ========== MEDIA TAB ========== -->
     <div id="media" class="tab-pane">
         <h2><i class="fas fa-photo-video"></i> Video & Photo Examples for Tasmanian Conditions</h2>
         <p>Visual examples bring field signals to life. <strong>Predict before you watch or view.</strong></p>
+
         <h3><i class="fas fa-video"></i> Key Video Resources</h3>
-        <div class="prediction-card"><button class="prediction-question" onclick="toggleAnswer('videoPred1')">🎬 Before watching Video 1: How to decide where to control first?</button><div id="videoPred1" class="prediction-answer">Prioritise areas of moderate resilience, protect high-quality areas, plan long-term for degraded sites.</div></div>
-        <div class="media-container"><div class="video-wrapper" id="video1"><iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Integrated weed management" frameborder="0" allowfullscreen></iframe></div><p><strong>Video 1:</strong> Integrated weed management using ecological resilience.</p></div>
-        <div class="prediction-card"><button class="prediction-question" onclick="toggleAnswer('videoPred2')">🎬 Before watching Video 2: Should all non-native plants be removed?</button><div id="videoPred2" class="prediction-answer">Weeds defined by impact, not origin. Some weeds are symptoms rather than causes.</div></div>
-        <div class="media-container"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Environmental weeds" frameborder="0" allowfullscreen></iframe></div><p><strong>Video 2:</strong> Ecological principles behind weed management.</p></div>
+
+        <div class="prediction-card">
+            <button class="prediction-question" onclick="toggleAnswer('videoPred1')" aria-expanded="false" aria-controls="videoPred1">
+                🎬 <strong>Before watching Video 1:</strong> If you had a Tasmanian property with weeds (gorse, broom, blackberry), how would you decide where to control first—and where not to disturb?
+            </button>
+            <div id="videoPred1" class="prediction-answer">
+                After watching, compare: the video explains integrated weed management based on ecological resilience.
+                Key idea: prioritise areas of moderate resilience, protect high-quality areas (e.g., Tasmanian remnant grassland), and plan long-term for degraded sites rather than treating everything the same.
+            </div>
+            <div class="confidence-rating">
+                <span>How confident are you in your approach?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="videoPred1">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="videoPred1">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="videoPred1">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-videoPred1"></div>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <div class="video-wrapper" id="video1">
+                <iframe src="https://www.youtube.com/embed/dNbjTL21CLY" title="Integrated weed management and resilience" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Video 1:</strong> Explains integrated weed management using ecological resilience. Focus on how site condition (high, moderate, poor resilience) determines control strategy, and why not all areas should be treated the same.</p>
+        </div>
+
+        <div class="prediction-card">
+            <button class="prediction-question" onclick="toggleAnswer('videoPred2')" aria-expanded="false" aria-controls="videoPred2">
+                🎬 <strong>Before watching Video 2:</strong> Should all non-native plants be removed from a Tasmanian natural area? Why or why not?
+            </button>
+            <div id="videoPred2" class="prediction-answer">
+                After watching, compare: the video challenges this assumption.
+                Key ideas: environmental weeds are defined by impact (not origin), disturbance drives weed invasion, and some weeds are symptoms (passengers) rather than causes (drivers).
+                Removing plants without understanding the system can cause harm. Relevant to Tasmanian landscapes where disturbance history matters.
+            </div>
+            <div class="confidence-rating">
+                <span>How confident are you in your thinking?</span>
+                <button class="confidence-btn confidence-low" data-confidence="low" data-target="videoPred2">🔴 Low</button>
+                <button class="confidence-btn confidence-medium" data-confidence="medium" data-target="videoPred2">🟡 Medium</button>
+                <button class="confidence-btn confidence-high" data-confidence="high" data-target="videoPred2">🟢 High</button>
+                <div class="confidence-feedback" id="confidence-videoPred2"></div>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/b_GaUwNPKv8" title="Environmental weeds and ecological principles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Video 2:</strong> Introduces ecological principles behind weed management. Focus on disturbance, opportunistic vs competitive species, and the difference between driver and passenger weeds.</p>
+        </div>
+
         <h3><i class="fas fa-camera"></i> Tasmanian Field Photo Gallery</h3>
-        <p><strong>In development:</strong> Add your own Tasmanian weed photos to the <code>weeds/</code> folder with these filenames: gorse.jpg, montpelier-broom.jpg, ragwort.jpg, pampas-grass.jpg, boneseed.jpg, blackberry.jpg, capeweed.jpg, banana-passionfruit.jpg, spear-thistle.jpg, cotoneaster.jpg, mirror-bush.jpg, sweet-pittosporum.jpg</p>
+        <p><strong>In development:</strong> Add your own Tasmanian weed photos to the <code>weeds/</code> folder with these filenames:<br>
+        gorse.jpg, montpelier-broom.jpg, ragwort.jpg, pampas-grass.jpg, boneseed.jpg, blackberry.jpg,<br>
+        capeweed.jpg, banana-passionfruit.jpg, spear-thistle.jpg, cotoneaster.jpg, mirror-bush.jpg, sweet-pittosporum.jpg</p>
         <div class="disclaimer"><i class="fas fa-info-circle"></i> Photos help with identification. Include images showing: whole plant, leaves, flowers, seeds, and infestation scale in Tasmanian landscapes.</div>
     </div>
 
@@ -1280,13 +1493,8 @@ Never burn without a follow-up plan.
     // ========== TOGGLE PREDICTION ANSWER ==========
     function toggleAnswer(id) {
         const element = document.getElementById(id);
-        const button = document.querySelector(`button[onclick*="toggleAnswer('${id}')"]`);
         if (element) {
             element.classList.toggle('show');
-            if (button) {
-                const isExpanded = element.classList.contains('show');
-                button.setAttribute('aria-expanded', isExpanded);
-            }
         }
     }
 
@@ -1294,34 +1502,29 @@ Never burn without a follow-up plan.
     function revealMicro(id) {
         const el = document.getElementById(id);
         if (el) {
-            el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+            if (el.style.display === 'none' || el.style.display === '') {
+                el.style.display = 'block';
+            } else {
+                el.style.display = 'none';
+            }
         }
     }
 
-    // ========== TAB SWITCHING (FIXED) ==========
+    // ========== TAB SWITCHING ==========
     function showTab(event, tabId) {
-        // Hide all tab panes
         document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-        // Remove active class from all tab buttons
         document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        // Show selected tab pane
         const selectedPane = document.getElementById(tabId);
         if (selectedPane) {
             selectedPane.classList.add('active');
-        } else {
-            console.error('Tab not found:', tabId);
-            return;
         }
-        // Add active class to clicked button
         if (event && event.currentTarget) {
             event.currentTarget.classList.add('active');
         } else {
             const button = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
             if (button) button.classList.add('active');
         }
-        // Save current tab to localStorage
         localStorage.setItem('activeTab', tabId);
-        // Smooth scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1338,19 +1541,19 @@ Never burn without a follow-up plan.
                     switch(confidence) {
                         case 'low':
                             message = 'Good instinct to question yourself. Review this concept — this is where learning happens in Tasmanian conditions.';
-                            style = 'background: #fef1f0; border-left: 4px solid var(--confidence-low);';
+                            style = 'background: #fef1f0; border-left: 4px solid var(--confidence-low); padding: 0.5rem; border-radius: 0.5rem; margin-top: 0.5rem;';
                             break;
                         case 'medium':
                             message = 'You\'re on the right track. The gap between your prediction and reality is where Tasmanian field judgement grows.';
-                            style = 'background: #fff8e7; border-left: 4px solid var(--confidence-medium);';
+                            style = 'background: #fff8e7; border-left: 4px solid var(--confidence-medium); padding: 0.5rem; border-radius: 0.5rem; margin-top: 0.5rem;';
                             break;
                         case 'high':
                             message = 'Strong confidence! If you were correct, excellent. If not, this is your most valuable learning moment for Tasmania.';
-                            style = 'background: #e8f8e8; border-left: 4px solid var(--confidence-high);';
+                            style = 'background: #e8f8e8; border-left: 4px solid var(--confidence-high); padding: 0.5rem; border-radius: 0.5rem; margin-top: 0.5rem;';
                             break;
                     }
                     feedbackDiv.innerHTML = `<i class="fas fa-chart-simple"></i> ${message}`;
-                    feedbackDiv.style.cssText = style + 'padding: 0.5rem; border-radius: 0.5rem; margin-top: 0.5rem;';
+                    feedbackDiv.style.cssText = style;
                     feedbackDiv.classList.add('show');
                     
                     const savedConfidence = JSON.parse(localStorage.getItem('weedConfidence') || '{}');
