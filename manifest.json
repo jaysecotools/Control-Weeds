@@ -1,14 +1,21 @@
 {
-    "name": "AHCPMG301 Weed Control · Field Judgement Training",
-    "short_name": "Weed Training",
-    "description": "Prediction-first learning for conservation and ecosystem management students. Field judgement training for weed control.",
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#1a4a35",
-    "background_color": "#deecda",
-    "orientation": "any",
-    "scope": ".",
-    "icons": [
+  "name": "AHCPMG301 Weed Control · Field Judgement Training",
+  "short_name": "Weed Training",
+  "description": "Prediction-first learning for conservation and ecosystem management students. Field judgement training for weed control.",
+
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+
+  "display": "standalone",
+  "theme_color": "#1a4a35",
+  "background_color": "#deecda",
+  "orientation": "any",
+
+  "lang": "en-AU",
+  "dir": "ltr",
+
+  "icons": [
     {
       "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
@@ -39,47 +46,66 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-    ],
-    "shortcuts": [
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Weed Library",
+      "short_name": "Weeds",
+      "description": "View all 18 weed species",
+      "url": "/?tab=weedlib",
+      "icons": [
         {
-            "name": "Weed Library",
-            "short_name": "Weeds",
-            "description": "View all 18 weed species",
-            "url": "?tab=weedlib",
-            "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
-        },
-        {
-            "name": "Micro-scenarios",
-            "short_name": "Scenarios",
-            "description": "Test your field judgement",
-            "url": "?tab=micro",
-            "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
-        },
-        {
-            "name": "Self Quiz",
-            "short_name": "Quiz",
-            "description": "Check your knowledge",
-            "url": "?tab=quiz",
-            "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
         }
-    ],
-    "screenshots": [
+      ]
+    },
+    {
+      "name": "Micro-scenarios",
+      "short_name": "Scenarios",
+      "description": "Test your field judgement",
+      "url": "/?tab=micro",
+      "icons": [
         {
-            "src": "screenshots/desktop.png",
-            "sizes": "1280x720",
-            "type": "image/png",
-            "form_factor": "wide",
-            "label": "Desktop view of weed training app"
-        },
-        {
-            "src": "screenshots/mobile.png",
-            "sizes": "360x640",
-            "type": "image/png",
-            "form_factor": "narrow",
-            "label": "Mobile view of weed training app"
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
         }
-    ],
-    "categories": ["education", "productivity"],
-    "lang": "en-AU",
-    "dir": "ltr"
+      ]
+    },
+    {
+      "name": "Self Quiz",
+      "short_name": "Quiz",
+      "description": "Check your knowledge",
+      "url": "/?tab=quiz",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of weed training app"
+    },
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "360x640",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of weed training app"
+    }
+  ],
+
+  "categories": ["education", "productivity"]
 }
