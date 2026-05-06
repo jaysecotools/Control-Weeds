@@ -1,8 +1,3 @@
-Here's a comprehensive README.md for your project. Save this as README.md in the same folder as your index.html.
-
----
-
-```markdown
 # AHCPMG301 · Weed Control · Prediction-First Learning
 
 **A field judgement training tool for Certificate III in Conservation and Ecosystem Management students.**
