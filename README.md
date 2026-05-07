@@ -1,7 +1,15 @@
-# AHCPMG301 · Weed Control · Prediction-First Learning
+# Control Weeds · Tasmanian Learning Resource
 
 **A field judgement training tool for Certificate III in Conservation and Ecosystem Management students.**
 
+# 🔄 How to Update This App (1-Step Process)
+
+## To publish a new version:
+
+**1. Edit `sw.js` - change line 4:**
+
+```javascript
+const APP_VERSION = '2.0.0';  // ← CHANGE THIS NUMBER
 ---
 
 ## 📋 Overview
