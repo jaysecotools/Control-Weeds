@@ -1833,5 +1833,23 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+<script>
+// Display version from service worker
+const versionSpan = document.getElementById('appVersion');
+if (versionSpan) {
+    fetch('/sw.js')
+        .then(response => response.text())
+        .then(text => {
+            const versionMatch = text.match(/APP_VERSION = ['"]([^'"]+)['"]/);
+            if (versionMatch) {
+                versionSpan.textContent = versionMatch[1];
+            }
+        })
+        .catch(() => {
+            // Keep default version if can't fetch
+        });
+}
+</script>
+        
 </body>
 </html>
