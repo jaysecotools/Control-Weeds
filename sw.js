@@ -1,7 +1,7 @@
 // sw.js - Production-ready offline-first service worker for AHCPMG301 Weed Training
 
 // ⚡ UPDATE THIS ONE NUMBER WHEN YOU MAKE CHANGES ⚡
-const APP_VERSION = '4.1.1';
+const APP_VERSION = '4.1.2';
 // ================================================
 
 const CACHE_NAME = `weed-control-v${APP_VERSION.replace(/\./g, '-')}`;
