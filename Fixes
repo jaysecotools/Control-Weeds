@@ -1,108 +1,124 @@
-Good question! Your app version should be in your code, and you're right - it's missing from your current setup.
+Clear instructions: Update version in ONE place
 
-The version number helps with:
+Add this variable at the top of sw.js and it will control everything automatically.
 
-· Cache management - When you update the app, users get the new version
-· Debugging - Know which version is running
-· User communication - Show "v2.1.0" in the footer
+---
 
-Where to add it:
+1. sw.js - Replace the top section (lines 1-5)
 
-1. In your HTML (visible to users):
+Current code:
 
-Add to your footer (around line 1240):
+```javascript
+// sw.js - Production-ready offline-first service worker for AHCPMG301 Weed Training
+
+const CACHE_NAME = 'weed-control-v4';
+const OFFLINE_URL = '/offline.html';
+```
+
+Replace with:
+
+```javascript
+// sw.js - Production-ready offline-first service worker for AHCPMG301 Weed Training
+
+// ⚡ UPDATE THIS ONE NUMBER WHEN YOU MAKE CHANGES ⚡
+const APP_VERSION = '2.0.0';
+// ================================================
+
+const CACHE_NAME = `weed-control-v${APP_VERSION.replace(/\./g, '-')}`;
+const OFFLINE_URL = '/offline.html';
+```
+
+---
+
+2. index.html - Add version to footer
+
+Find this section near the bottom (around line 1240):
+
+Current code:
 
 ```html
 <footer class="footer">
     <span>© AHCPMG301 · Prediction-First Learning · Tasmanian Edition</span>
-    <span>Version 2.0.0 | Last updated: May 2026</span>
     <span>Remember: Learning happens in the gap between prediction and reality</span>
     <span>Field judgement > content knowledge | Biosecurity Act 2019 (TAS)</span>
 </footer>
 ```
 
-2. In your manifest.json (for PWA metadata):
+Replace with:
+
+```html
+<footer class="footer">
+    <span>© AHCPMG301 · Prediction-First Learning · Tasmanian Edition</span>
+    <span>Version <span id="appVersion">2.0.0</span> | Remember: Learning happens in the gap between prediction and reality</span>
+    <span>Field judgement > content knowledge | Biosecurity Act 2019 (TAS)</span>
+</footer>
+```
+
+Then add this script before the closing </body> tag (around line 1280, after the service worker registration):
+
+```html
+<script>
+// Display version from service worker
+const versionSpan = document.getElementById('appVersion');
+if (versionSpan) {
+    fetch('/sw.js')
+        .then(response => response.text())
+        .then(text => {
+            const versionMatch = text.match(/APP_VERSION = ['"]([^'"]+)['"]/);
+            if (versionMatch) {
+                versionSpan.textContent = versionMatch[1];
+            }
+        })
+        .catch(() => {
+            // Keep default version if can't fetch
+        });
+}
+</script>
+```
+
+---
+
+3. manifest.json - Optional (not essential)
+
+Add version line at the top (line 2):
+
+Current code:
+
+```json
+{
+  "name": "AHCPMG301 Weed Control · Field Judgement Training",
+  "short_name": "Weed Training",
+```
+
+Replace with:
 
 ```json
 {
   "name": "AHCPMG301 Weed Control · Field Judgement Training",
   "short_name": "Weed Training",
   "version": "2.0.0",
-  "description": "Prediction-first learning for conservation and ecosystem management students...",
-  ...
-}
 ```
 
-3. In your service worker (critical for updates):
+---
 
-Update your sw.js version constant:
+📋 How to update in the future:
+
+Just change line 4 in sw.js:
 
 ```javascript
-// sw.js - Production-ready offline-first service worker for AHCPMG301 Weed Training
-
-const APP_VERSION = '2.0.0';
-const CACHE_NAME = `weed-control-v${APP_VERSION.replace(/\./g, '-')}`;
+const APP_VERSION = '2.0.0';  // Change to 2.1.0 or 2.0.1 etc.
 ```
 
-Better yet - automate versioning:
+The footer will automatically show the new version. The service worker cache name will also update automatically.
 
-Add this to your index.html footer:
+✅ Verification:
 
-```html
-<footer class="footer">
-    <span>© AHCPMG301 · Prediction-First Learning · Tasmanian Edition</span>
-    <span>Version: <span id="app-version">2.0.0</span> | 
-           Cache: <span id="cache-version"></span></span>
-    <span>Remember: Learning happens in the gap between prediction and reality</span>
-    <span>Field judgement > content knowledge | Biosecurity Act 2019 (TAS)</span>
-</footer>
+After making these changes:
 
-<script>
-// Display cache version from service worker
-if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-    navigator.serviceWorker.ready.then(registration => {
-        registration.active.postMessage({type: 'GET_VERSION'});
-    });
-}
+1. Save all files
+2. Clear browser cache (Ctrl+Shift+Delete)
+3. Reload the page
+4. Check footer shows "Version 2.0.0"
+5. Open DevTools → Application → Service Workers → Cache name should show weed-control-v2-0-0
 
-// Or simpler - just show the version
-document.addEventListener('DOMContentLoaded', () => {
-    const cacheSpan = document.getElementById('cache-version');
-    if (cacheSpan) {
-        cacheSpan.textContent = 'v2.0.0';
-    }
-});
-</script>
-```
-
-📌 Recommended versioning strategy:
-
-When to increment version:
-
-· Major (2.0.0) - Large redesign, new tabs, major features
-· Minor (2.1.0) - New content, new scenarios, extra weed profiles
-· Patch (2.1.1) - Bug fixes, text corrections, CSS tweaks
-
-⚠️ Important for PWA updates:
-
-When you change the app, users won't see changes immediately unless you:
-
-1. Change the service worker cache name in sw.js:
-   ```javascript
-   const CACHE_NAME = 'weed-control-v2-0-0'; // Change this on every update
-   ```
-2. Or automate it:
-   ```javascript
-   const APP_VERSION = '2.0.0';
-   const CACHE_NAME = `weed-control-${APP_VERSION}`;
-   ```
-
-Current status:
-
-Your app doesn't have a visible version right now. Add it to:
-
-· ✅ Footer (for users)
-· ✅ manifest.json (optional but good)
-· ✅ sw.js cache name (essential for updates)
-
-Want me to show you exactly where to insert these lines in your current files?
+That's it! Only one file to edit (sw.js) for all future updates.
