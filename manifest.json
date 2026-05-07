@@ -1,6 +1,7 @@
 {
   "name": "AHCPMG301 Weed Control · Field Judgement Training",
   "short_name": "Weed Training",
+  "version": "4.1.0",
   "description": "Prediction-first learning for conservation and ecosystem management students. Field judgement training for weed control.",
 
   "id": "/",
